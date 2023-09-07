@@ -6036,7 +6036,8 @@ textarea.form-control-lg {
   position: relative;
   display: none;
   float: left;
-  width: 100%;
+  width: 1300px;
+  height: 669.59px;
   margin-right: -100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -6097,7 +6098,7 @@ textarea.form-control-lg {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15%;
+  width: 9%;
   padding: 0;
   color: #fff;
   text-align: center;
