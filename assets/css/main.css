@@ -226,7 +226,10 @@ section {
   max-height: 40px;
   margin-right: 6px;
 }
-
+.himn{
+  font-size: larger;
+  
+}
 .header .logo h1 {
   font-size: 32px;
   font-weight: 300;
