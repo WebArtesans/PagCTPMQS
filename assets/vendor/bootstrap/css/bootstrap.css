@@ -705,6 +705,8 @@ progress {
 .img-fluid {
   max-width: 100%;
   height: auto;
+  margin-top: 20px;
+  border-radius: 25%;
 }
 
 .img-thumbnail {
@@ -1398,7 +1400,7 @@ progress {
   }
   .col-lg-5 {
     flex: 0 0 auto;
-    width: 41.66666667%;
+    width: 33.33333333%;
   }
   .col-lg-6 {
     flex: 0 0 auto;
