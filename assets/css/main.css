@@ -2311,10 +2311,13 @@ section {
 .info-item{
   margin-right: 50px;
   text-align: center;
-  margin-left: 120px;
+  margin-left: 90px;
+  border-left:double rgb(201, 201, 201);
+  border-right:double rgb(202, 202, 202);
+  padding: 20px;
 }
 .contact-title{
-  margin-left: 45%;
+  margin-left: 46%;
 }
 
 .contact .php-email-form .error-message {
