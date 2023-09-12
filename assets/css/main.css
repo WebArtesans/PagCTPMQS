@@ -2311,9 +2311,8 @@ section {
 .info-item{
   margin-right: 50px;
   text-align: center;
-  margin-left: 90px;
-  border-left:double rgb(201, 201, 201);
-  border-right:double rgb(202, 202, 202);
+  margin-left: 150px;
+ 
   padding: 20px;
 }
 .contact-title{
