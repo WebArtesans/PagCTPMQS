@@ -2318,6 +2318,9 @@ section {
 .contact-title{
   margin-left: 46%;
 }
+.nav-link{
+  margin-right: 40px;
+}
 
 .contact .php-email-form .error-message {
   display: none;
