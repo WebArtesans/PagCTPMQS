@@ -1660,7 +1660,7 @@ section {
 --------------------------------------------------------------*/
 .testimonials {
   padding: 80px 0;
-  background: url("../img/testimonials-bg.jpg") no-repeat;
+  background:  no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -2312,7 +2312,11 @@ section {
   margin-right: 50px;
   text-align: center;
   margin-left: 150px;
- 
+<<<<<<< Updated upstream
+  
+=======
+  display: flex;
+>>>>>>> Stashed changes
   padding: 20px;
 }
 .contact-title{
