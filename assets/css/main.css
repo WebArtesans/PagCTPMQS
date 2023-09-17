@@ -2312,18 +2312,11 @@ section {
   margin-right: 50px;
   text-align: center;
   margin-left: 150px;
-<<<<<<< Updated upstream
-  
-=======
   display: flex;
->>>>>>> Stashed changes
   padding: 20px;
 }
 .contact-title{
   margin-left: 46%;
-}
-.nav-link{
-  margin-right: 40px;
 }
 
 .contact .php-email-form .error-message {
