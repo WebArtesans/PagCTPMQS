@@ -709,6 +709,13 @@ progress {
   border-radius: 10%;
 }
 
+.img-fluidToModals{
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 50%;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: var(--bs-body-bg);
