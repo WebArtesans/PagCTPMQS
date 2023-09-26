@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'fontello';
-  src: url('../font/fontello.eot?94829491');
-  src: url('../font/fontello.eot?94829491#iefix') format('embedded-opentype'),
-       url('../font/fontello.woff2?94829491') format('woff2'),
-       url('../font/fontello.woff?94829491') format('woff'),
-       url('../font/fontello.ttf?94829491') format('truetype'),
-       url('../font/fontello.svg?94829491#fontello') format('svg');
+  src: url('../font/fontello.eot?85212915');
+  src: url('../font/fontello.eot?85212915#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?85212915') format('woff2'),
+       url('../font/fontello.woff?85212915') format('woff'),
+       url('../font/fontello.ttf?85212915') format('truetype'),
+       url('../font/fontello.svg?85212915#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?94829491#fontello') format('svg');
+    src: url('../font/fontello.svg?85212915#fontello') format('svg');
   }
 }
 */
@@ -55,3 +55,4 @@
 }
 
 .icon-3687839-adventure-lumber-timber-wood_108803:before { content: '\e800'; } /* '' */
+.icon-travel_journey_tourism_traveler_hat_bag_adventure_icon_128613:before { content: '\e801'; } /* '' */
