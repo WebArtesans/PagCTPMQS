@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.ueprim.edu.ec/xmlrpc.php">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<title>Primera Infancia - UEPRIM</title>
+<link rel="canonical" href="https://www.ueprim.edu.ec/educacion-inicial/" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Primera Infancia - UEPRIM" />
+<meta property="og:description" content="Primera Infancia Oferta Educativa En Primera Infancia acogemos a niños desde los 2 años hasta los 5. Nuestro objetivo es impulsar el desarrollo integral de nuestros niños para que logren ser felices a través de experiencias de aprendizaje significativas. Malla &hellip;" />
+<meta property="og:url" content="https://www.ueprim.edu.ec/educacion-inicial/" />
+<meta property="og:site_name" content="UEPRIM" />
+<meta property="article:publisher" content="https://www.facebook.com/UEPRIM" />
+<meta property="article:modified_time" content="2023-04-18T16:44:03+00:00" />
+<meta property="og:image" content="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/ei12.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ueprim" />
+<meta name="twitter:label1" content="Tiempo de lectura" />
+<meta name="twitter:data1" content="6 minutos" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.ueprim.edu.ec/educacion-inicial/","url":"https://www.ueprim.edu.ec/educacion-inicial/","name":"Primera Infancia - UEPRIM","isPartOf":{"@id":"https://www.ueprim.edu.ec/#website"},"primaryImageOfPage":{"@id":"https://www.ueprim.edu.ec/educacion-inicial/#primaryimage"},"image":{"@id":"https://www.ueprim.edu.ec/educacion-inicial/#primaryimage"},"thumbnailUrl":"https://www.ueprim.edu.ec/wp-content/uploads/2023/04/ei12.jpg","datePublished":"2015-11-03T02:46:28+00:00","dateModified":"2023-04-18T16:44:03+00:00","breadcrumb":{"@id":"https://www.ueprim.edu.ec/educacion-inicial/#breadcrumb"},"inLanguage":"es","potentialAction":[{"@type":"ReadAction","target":["https://www.ueprim.edu.ec/educacion-inicial/"]}]},{"@type":"ImageObject","inLanguage":"es","@id":"https://www.ueprim.edu.ec/educacion-inicial/#primaryimage","url":"https://www.ueprim.edu.ec/wp-content/uploads/2023/04/ei12.jpg","contentUrl":"https://www.ueprim.edu.ec/wp-content/uploads/2023/04/ei12.jpg"},{"@type":"BreadcrumbList","@id":"https://www.ueprim.edu.ec/educacion-inicial/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Portada","item":"https://www.ueprim.edu.ec/"},{"@type":"ListItem","position":2,"name":"Primera Infancia"}]},{"@type":"WebSite","@id":"https://www.ueprim.edu.ec/#website","url":"https://www.ueprim.edu.ec/","name":"UEPRIM","description":"Somos líderes en enseñanza plurilingûe en la Provincia de El Oro","publisher":{"@id":"https://www.ueprim.edu.ec/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.ueprim.edu.ec/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"es"},{"@type":"Organization","@id":"https://www.ueprim.edu.ec/#organization","name":"UEPRIM Seduc Cia. Ltda.","url":"https://www.ueprim.edu.ec/","logo":{"@type":"ImageObject","inLanguage":"es","@id":"https://www.ueprim.edu.ec/#/schema/logo/image/","url":"https://www.ueprim.edu.ec/wp-content/uploads/2021/06/logo-full-blue.png","contentUrl":"https://www.ueprim.edu.ec/wp-content/uploads/2021/06/logo-full-blue.png","width":290,"height":100,"caption":"UEPRIM Seduc Cia. Ltda."},"image":{"@id":"https://www.ueprim.edu.ec/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/UEPRIM","https://twitter.com/ueprim","https://www.instagram.com/ueprim_seduc/","https://www.youtube.com/channel/UCB0qsFDBmJytKTc6f70JXLA"]}]}</script>
+
+<link rel="preload" href="https://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiByp8kv8JHgFVrLDz8Z11lFd2JQEl8qw.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiByp8kv8JHgFVrLDz8Z1JlFd2JQEl8qw.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiByp8kv8JHgFVrLDz8Z1xlFd2JQEk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiByp8kv8JHgFVrLEj6Z11lFd2JQEl8qw.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="alternate" type="application/rss+xml" title="UEPRIM &raquo; Feed" href="https://www.ueprim.edu.ec/feed/" />
+<link rel="alternate" type="application/rss+xml" title="UEPRIM &raquo; Feed de los comentarios" href="https://www.ueprim.edu.ec/comments/feed/" />
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.ueprim.edu.ec/wp-includes/css/dist/block-library/style.min.css?ver=6.3.1" type="text/css" media="all" />
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<link rel="stylesheet" id="bp-login-form-block-css" href="https://www.ueprim.edu.ec/wp-content/plugins/buddypress/bp-core/css/blocks/login-form.min.css?ver=11.3.1" type="text/css" media="all" />
+<link rel="stylesheet" id="bp-member-block-css" href="https://www.ueprim.edu.ec/wp-content/plugins/buddypress/bp-members/css/blocks/member.min.css?ver=11.3.1" type="text/css" media="all" />
+<link rel="stylesheet" id="bp-members-block-css" href="https://www.ueprim.edu.ec/wp-content/plugins/buddypress/bp-members/css/blocks/members.min.css?ver=11.3.1" type="text/css" media="all" />
+<link rel="stylesheet" id="bp-dynamic-members-block-css" href="https://www.ueprim.edu.ec/wp-content/plugins/buddypress/bp-members/css/blocks/dynamic-members.min.css?ver=11.3.1" type="text/css" media="all" />
+<link rel="stylesheet" id="bp-latest-activities-block-css" href="https://www.ueprim.edu.ec/wp-content/plugins/buddypress/bp-activity/css/blocks/latest-activities.min.css?ver=11.3.1" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-blocks-vendors-style-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=1695757573" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="wc-all-blocks-style-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-all-blocks-style.css?ver=1695757573" type="text/css" media="all" />
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: #ffd703;--wp--preset--color--title: #333;--wp--preset--color--sub-title: #999;--wp--preset--color--border-input: #ddd;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 28px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 15px;--wp--preset--font-size--huge: 36px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="bp-legacy-css-css" href="https://www.ueprim.edu.ec/wp-content/plugins/buddypress/bp-templates/bp-legacy/css/buddypress.min.css?ver=11.3.1" type="text/css" media="screen" />
+<link data-minify="1" rel="stylesheet" id="contact-form-7-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1695757573" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="pmpro_frontend-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/plugins/paid-memberships-pro/css/frontend.css?ver=1695757573" type="text/css" media="screen" />
+<link rel="stylesheet" id="pmpro_print-css" href="https://www.ueprim.edu.ec/wp-content/plugins/paid-memberships-pro/css/print.css?ver=2.12.2" type="text/css" media="print" />
+<link rel="stylesheet" id="select2-css" href="https://www.ueprim.edu.ec/wp-content/plugins/paid-memberships-pro/css/select2.min.css?ver=4.0.3" type="text/css" media="screen" />
+<style id="woocommerce-inline-inline-css" type="text/css">
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link data-minify="1" rel="stylesheet" id="mc4wp-form-basic-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/plugins/mailchimp-for-wp/assets/css/form-basic.css?ver=1695757573" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="h5p-plugin-styles-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/plugins/h5p/h5p-php-library/styles/h5p.css?ver=1695757573" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="tablepress-default-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/plugins/tablepress/css/build/default.css?ver=1695757573" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-icons-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=1695757573" type="text/css" media="all" />
+<link rel="stylesheet" id="elementor-frontend-css" href="https://www.ueprim.edu.ec/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.16.4" type="text/css" media="all" />
+<link rel="stylesheet" id="swiper-css" href="https://www.ueprim.edu.ec/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6" type="text/css" media="all" />
+<link rel="stylesheet" id="elementor-post-8934-css" href="https://www.ueprim.edu.ec/wp-content/uploads/elementor/css/post-8934.css?ver=1695757528" type="text/css" media="all" />
+<link rel="stylesheet" id="elementor-pro-css" href="https://www.ueprim.edu.ec/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.16.2" type="text/css" media="all" />
+<link rel="stylesheet" id="elementor-global-css" href="https://www.ueprim.edu.ec/wp-content/uploads/elementor/css/global.css?ver=1695757529" type="text/css" media="all" />
+<link rel="stylesheet" id="elementor-post-2780-css" href="https://www.ueprim.edu.ec/wp-content/uploads/elementor/css/post-2780.css?ver=1695759590" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="thim-parent-style-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/themes/eduma/style.css?ver=1695757573" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="font-awesome-5-all-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/themes/eduma/assets/css/all.min.css?ver=1695757573" type="text/css" media="all" />
+<link rel="stylesheet" id="font-awesome-4-shim-css" href="https://www.ueprim.edu.ec/wp-content/themes/eduma/assets/css/v4-shims.min.css?ver=5.3.2.1" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-icons-thim-ekits-fonts-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/themes/eduma/assets/css/thim-ekits-icons.min.css?ver=1695757573" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="thim-style-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/themes/eduma-child-crypto/style.css?ver=1695757573" type="text/css" media="all" />
+<style id="thim-style-inline-css" type="text/css">
+:root{--thim-body-primary-color:#ffd703;--thim_body_primary_color_rgb:255,215,3;--thim-body-secondary-color:#133b80;--thim-button-text-color:#000000;--thim-button-hover-color:#133b80;--thim_button_hover_color_rgb:19,59,128;--thim-border-color:#eee;--top-info-course-background_color:#273044;--top-info-course-text_color:#fff;--thim-footer-font-title-font-size:14px;--thim-footer-font-title-line-height:40px;--thim-footer-font-title-text-transform:uppercase;--thim-top-heading-title-align:left;--thim-top-heading-title-font-size-desktop:48px;--thim-top-heading-title-font-size-mobile:35px;--thim-top-heading-title-font-text-transform:uppercase;--thim-top-heading-title-font-weight:bold;--thim-top-heading-padding-top:90px;--thim-top-heading-padding-bottom:90px;--thim-top-heading-padding-top-mobile:50px;--thim-top-heading-padding-bottom-mobile:50px;--thim-breacrumb-font-size:1em;--thim-breacrumb-color:#666;--thim-course-price-color:#f24c0a;--thim-bg-color-toolbar:#111111;--thim-text-color-toolbar:#ffffff;--thim-link-color-toolbar:#ffffff;--thim-link-hover-color-toolbar:#fff;--thim-toolbar-font-size:12px;--thim-toolbar-line-height:30px;--thim-toolbar-text-transform:none;--thim-toolbar-font-weight:600;--thim-toolbar-border-type:dashed;--thim-toolbar-border-size:1px;--thim-link-color-toolbar-border-button:#ddd;--thim-bg-main-menu-color:rgba(255,255,255,0);--thim-main-menu-font-size:16px;--thim-main-menu-line-height:1.3em;--thim-main-menu-text-transform:uppercase;--thim-main-menu-font-weight:600;--thim-main-menu-text-color:#ffffff;--thim_main_menu_text_color_rgb:255,255,255;--thim-main-menu-text-hover-color:#ffd703;--thim-sticky-bg-main-menu-color:#fff;--thim-sticky-main-menu-text-color:#133b80;--thim_sticky_main_menu_text_color_rgb:19,59,128;--thim-sticky-main-menu-text-hover-color:#ffd703;--thim-sub-menu-bg-color:#ffffff;--thim-sub-menu-border-color:rgba(43,43,43,0);--thim-sub-menu-text-color:#000000;--thim-sub-menu-text-color-hover:#ffd703;--thim-bg-mobile-menu-color:#232323;--thim-mobile-menu-text-color:#777777;--thim_mobile_menu_text_color_rgb:119,119,119;--thim-mobile-menu-text-hover-color:#ffd703;--thim-footer-font-title-font-weight:700;--thim-bg-switch-layout-style:#f5f5f5;--thim-padding-switch-layout-style:10px;--thim-font-body-font-family:Poppins;--thim-font-body-variant:300;--thim-font-body-font-size:16px;--thim-font-body-line-height:1.7em;--thim-font-body-color:#6c6c6c;--thim-font-title-font-family:Poppins;--thim-font-title-color:#000000;--thim-font-title-variant:600;--thim-font-h1-font-size:36px;--thim-font-h1-line-height:1.6em;--thim-font-h1-text-transform:none;--thim-font-h2-font-size:28px;--thim-font-h2-line-height:1.6em;--thim-font-h2-text-transform:none;--thim-font-h3-font-size:24px;--thim-font-h3-line-height:1.6em;--thim-font-h3-text-transform:none;--thim-font-h4-font-size:18px;--thim-font-h4-line-height:1.6em;--thim-font-h4-text-transform:none;--thim-font-h5-font-size:16px;--thim-font-h5-line-height:1.6em;--thim-font-h5-text-transform:none;--thim-font-h6-font-size:16px;--thim-font-h6-line-height:1.4em;--thim-font-h6-text-transform:none;--thim-font-title-sidebar-font-size:18px;--thim-font-title-sidebar-line-height:1.4em;--thim-font-title-sidebar-text-transform:uppercase;--thim-font-button-font-size:13px;--thim-font-button-line-height:1.6em;--thim-font-button-text-transform:uppercase;--thim-font-button-variant:600;--thim-preload-style-background:#ffffff;--thim-preload-style-color:#133b80;--thim-footer-bg-color:#133b80;--thim-footer-color-title:#fff;--thim-footer-color-text:#bdbdbd;--thim-footer-color-link:#bdbdbd;--thim-footer-color-hover:#ffd703;--thim-padding-content-pdtop-desktop:60px;--thim-padding-content-pdbottom-desktop:60px;--thim-padding-content-pdtop-mobile:40px;--thim-padding-content-pdbottom-mobile:40px;--thim-copyright-bg-color:#133b80;--thim-copyright-text-color:#bdbdbd;--thim-copyright-border-color:rgba(219,219,219,0);--thim-bg-pattern:url("https://import.thimpress.com/wp-content/uploads/sites/eduma/2020/11/pattern1.png");--thim-bg-repeat:no-repeat;--thim-bg-position:center center;--thim-bg-attachment:inherit;--thim-bg-size:inherit;--thim-footer-bg-repeat:no-repeat;--thim-footer-bg-position:center center;--thim-footer-bg-size:inherit;--thim-footer-bg-attachment:inherit;--thim-body-bg-color:#fff;}
+/** CSS BuddyPress */
+#buddypress div.item-list-tabs ul li,#buddypress .bp-avatar-nav ul.avatar-nav-items li{position:relative;border-bottom:1px solid var(--thim-border-color,#eee)}#buddypress div.item-list-tabs ul li a,#buddypress .bp-avatar-nav ul.avatar-nav-items li a{border-radius:0;margin-right:3px;border:1px solid var(--thim-border-color,#eee);border-bottom:0;font-size:13px;font-weight:700;background:#f9f9f9;line-height:24px;padding:5px 15px;min-width:150px;text-align:center;color:var(--thim-font-title-color)}#buddypress div.item-list-tabs ul li a span,#buddypress .bp-avatar-nav ul.avatar-nav-items li a span{line-height:15px}#buddypress div.item-list-tabs ul li#activity-favs-personal-li:before,#buddypress div.item-list-tabs ul li#read-personal-li:before,#buddypress div.item-list-tabs ul li:last-child:before,#buddypress .bp-avatar-nav ul.avatar-nav-items li#activity-favs-personal-li:before,#buddypress .bp-avatar-nav ul.avatar-nav-items li#read-personal-li:before,#buddypress .bp-avatar-nav ul.avatar-nav-items li:last-child:before{right:0}#buddypress div.item-list-tabs ul li#activity-favs-personal-li:after,#buddypress div.item-list-tabs ul li#read-personal-li:after,#buddypress div.item-list-tabs ul li:last-child:after,#buddypress .bp-avatar-nav ul.avatar-nav-items li#activity-favs-personal-li:after,#buddypress .bp-avatar-nav ul.avatar-nav-items li#read-personal-li:after,#buddypress .bp-avatar-nav ul.avatar-nav-items li:last-child:after{right:0}#buddypress div.item-list-tabs ul li#activity-favs-personal-li a,#buddypress div.item-list-tabs ul li#read-personal-li a,#buddypress div.item-list-tabs ul li:last-child a,#buddypress .bp-avatar-nav ul.avatar-nav-items li#activity-favs-personal-li a,#buddypress .bp-avatar-nav ul.avatar-nav-items li#read-personal-li a,#buddypress .bp-avatar-nav ul.avatar-nav-items li:last-child a{margin-right:0}#buddypress div.item-list-tabs ul li#activity-filter-select,#buddypress div.item-list-tabs ul li.filter,#buddypress .bp-avatar-nav ul.avatar-nav-items li#activity-filter-select,#buddypress .bp-avatar-nav ul.avatar-nav-items li.filter{border-bottom:0}#buddypress div.item-list-tabs ul li:before,#buddypress .bp-avatar-nav ul.avatar-nav-items li:before{content:"";position:absolute;top:0;left:0;right:3px;height:3px}#buddypress div.item-list-tabs ul li:after,#buddypress .bp-avatar-nav ul.avatar-nav-items li:after{bottom:-1px;z-index:10;background:transparent;left:0;right:3px;height:1px;content:"";position:absolute}#buddypress div.item-list-tabs ul li.selected:after,#buddypress div.item-list-tabs ul li.current:after,#buddypress .bp-avatar-nav ul.avatar-nav-items li.selected:after,#buddypress .bp-avatar-nav ul.avatar-nav-items li.current:after{background:#fff}#buddypress div.item-list-tabs ul li.selected:before,#buddypress div.item-list-tabs ul li.current:before,#buddypress .bp-avatar-nav ul.avatar-nav-items li.selected:before,#buddypress .bp-avatar-nav ul.avatar-nav-items li.current:before{color:var(--thim-body-primary-color,#ffb606)}#buddypress div.item-list-tabs ul li.selected a,#buddypress div.item-list-tabs ul li.current a,#buddypress .bp-avatar-nav ul.avatar-nav-items li.selected a,#buddypress .bp-avatar-nav ul.avatar-nav-items li.current a{color:var(--thim-font-title-color);background:#fff;filter:alpha(opacity=100);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";-webkit-opacity:1;-khtml-opacity:1;-moz-opacity:1;-ms-opacity:1;-o-opacity:1;opacity:1}#buddypress .buddypress-left{width:180px;float:left;margin-right:30px}#buddypress .buddypress-left div.item-list-tabs ul li{display:block;width:100%}#buddypress .buddypress-left div.item-list-tabs ul li:before{right:0;left:auto;bottom:0;height:auto;width:3px}#buddypress .buddypress-left div.item-list-tabs ul li a{margin-right:0}#buddypress .buddypress-content{float:left;width:calc(100% - 210px);width:-webkit-calc(100% - 210px);width:-moz-calc(100% - 210px)}#buddypress .buddypress-content input:not([type=submit]){line-height:30px;background:transparent;padding:5px 10px;border:1px solid var(--thim-border-color,#eee)}#buddypress #item-body #subnav{margin:0 0 20px}#buddypress #item-body form#whats-new-form p.activity-greeting{line-height:20px}#buddypress #item-header{margin-bottom:30px}#buddypress .activity-list .activity-content .activity-header,#buddypress .activity-list .activity-content .comment-header{font-size:14px;color:var(--thim-font-title-color)}#buddypress .activity-list .activity-content .activity-header a:not(.activity-time-since),#buddypress .activity-list .activity-content .comment-header a:not(.activity-time-since){font-weight:700;color:var(--thim-font-title-color)}#buddypress .activity-list .activity-content .activity-header a:not(.activity-time-since):hover,#buddypress .activity-list .activity-content .comment-header a:not(.activity-time-since):hover{color:var(--thim-body-primary-color,#ffb606)}#buddypress .activity-list .activity-content .activity-header a:not(.activity-time-since):first-child,#buddypress .activity-list .activity-content .comment-header a:not(.activity-time-since):first-child{text-transform:capitalize}#buddypress .activity-list .activity-content .activity-header .activity-time-since,#buddypress .activity-list .activity-content .comment-header .activity-time-since{display:block;font-size:13px;font-style:italic}#buddypress .activity-list .activity-content .activity-inner,#buddypress .activity-list .activity-content blockquote{font-size:14px;border-color:var(--thim-body-primary-color,#ffb606)}#buddypress #item-header-content .user-nicename{text-transform:capitalize}#buddypress .activity-list li.mini .activity-avatar img.avatar{border-radius:50%;width:70px;height:70px;margin-left:0}#buddypress ul.item-list li{padding:25px 0}#buddypress ul.item-list li img.avatar{border-radius:50%;min-width:70px;max-width:70px}#buddypress .activity-list li .activity-content{margin-left:90px}#buddypress #item-body form#whats-new-form{padding-top:15px}#buddypress form#whats-new-form #whats-new-avatar{margin-right:20px}#buddypress form#whats-new-form #whats-new-content{padding-left:0;margin-left:90px}#buddypress form#whats-new-form #whats-new{outline:none;border-color:#ddd;-webkit-transition:all 0.3s ease-in-out;-khtml-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;height:75px !important}#buddypress form#whats-new-form #whats-new:focus{border-color:var(--thim-body-primary-color,#ffb606)}#buddypress div.item-list-tabs#subnav{margin-bottom:30px;margin-top:0}#buddypress input[type=submit]{font-size:13px;font-weight:700;text-transform:uppercase;border:0;line-height:30px;padding:5px 25px;color:var(--thim-body-primary-color,#ffb606)}#buddypress input[type=submit]:hover{color:var(--thim-font-title-color);border:0}#buddypress .acomment-meta>a:first-child{text-transform:capitalize;color:var(--thim-font-title-color)}#buddypress .acomment-meta>a:first-child:hover{color:var(--thim-body-primary-color,#ffb606)}#buddypress a.button{display:inline-block;line-height:20px;padding:5px 15px;border:none;outline:none;box-shadow:none;color:#fff;background-color:var(--thim-font-title-color);font-size:12px;font-weight:700}#buddypress a.button>span{font-size:12px;display:inline-block;background:transparent;color:#fff;-webkit-transition:all 0.3s ease-in-out;-khtml-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out}#buddypress a.button>span:before{content:"("}#buddypress a.button>span:after{content:")"}#buddypress a.button:hover{border:none;color:var(--thim-font-title-color)}#buddypress a.button:hover>span{color:var(--thim-font-title-color);background:transparent}#buddypress div.activity-meta .button{padding:5px 15px}#buddypress .standard-form input[type=password]{margin-bottom:20px}#buddypress .standard-form input[type=text]{margin:5px 0 20px}#buddypress span.label,#buddypress label{color:var(--thim-font-title-color)}#buddypress table,#buddypress td,#buddypress tr{border-color:var(--thim-border-color,#eee)}#buddypress table.profile-fields:last-child{margin-top:10px}#buddypress div.item-list-tabs ul li.last select{border-radius:0;line-height:30px;padding:5px 0;border:1px solid var(--thim-border-color,#eee);outline:none}#buddypress div.item-list-tabs ul li.last select:focus{outline:none}#buddypress div.activity-comments{padding:0}#buddypress div.activity-comments div.acomment-avatar img{width:70px;height:70px}#buddypress div.activity-comments>ul{padding:0;margin-top:25px}#buddypress div.activity-comments>ul>li{padding-top:25px;border-top:1px solid var(--thim-border-color,#eee) !important}#buddypress div.activity-comments>ul>li .acomment-options{float:none;margin:0}#buddypress div.activity-comments>ul>li .acomment-options a{color:var(--thim-body-primary-color,#ffb606)}#buddypress div.activity-comments>ul>li .acomment-options a:hover{color:var(--thim-body-primary-color,#ffb606);text-decoration:underline}#buddypress div.activity-comments li form.ac-form{border-top:1px solid var(--thim-border-color,#eee);padding:25px 0;margin-top:20px}#buddypress div.activity-comments li form.ac-form .ac-reply-content{margin-left:90px;padding:0}#buddypress div.activity-comments li form.ac-form .ac-reply-content .ac-textarea{border:0;padding:0}#buddypress div.activity-comments li form.ac-form .ac-reply-content textarea{border:1px solid var(--thim-border-color,#eee);padding:10px}#buddypress div.activity-comments li form.ac-form .ac-reply-content input[type=submit],#buddypress div.activity-comments li form.ac-form .ac-reply-content .ac-reply-cancel{display:inline-block;line-height:20px;padding:5px 15px;border:none;outline:0;box-shadow:none;color:#fff;font-size:12px;font-weight:700;text-transform:none;background-color:var(--thim-font-title-color)}#buddypress div.activity-comments li form.ac-form .ac-reply-content input[type=submit]:hover,#buddypress div.activity-comments li form.ac-form .ac-reply-content .ac-reply-cancel:hover{color:var(--thim-font-title-color);background-color:var(--thim-body-primary-color,#ffb606)}#buddypress .acomment-meta a:first-child{font-weight:700}#buddypress #members-dir-search{float:left;margin:0}#buddypress #members-directory-form{clear:right;margin-top:-50px}#buddypress #members-directory-form div.item-list-tabs{clear:right}#buddypress #members-directory-form div.item-list-tabs ul li.last{margin-top:0}#buddypress #members-list li .item{width:calc(100% - 90px);width:-webkit-calc(100% - 90px);width:-moz-calc(100% - 90px);float:right}#buddypress #members-list li .item .item-title{width:100%;font-size:100%}#buddypress #members-list li .item .item-title>a{font-weight:700;display:block;text-transform:capitalize;color:var(--thim-font-title-color)}#buddypress #members-list li .item .item-title>a:hover{color:var(--thim-body-primary-color,#ffb606)}#buddypress #members-list li .item .item-title .update{font-size:13px}#buddypress #members-list li .item .item-title .activity-read-more{font-size:13px}#buddypress #members-list li .item .item-title .activity-read-more a{color:var(--thim-body-primary-color,#ffb606)}#buddypress #members-list li .item .item-title .activity-read-more a:hover{color:var(--thim-body-primary-color,#ffb606);text-decoration:underline}#buddypress #members-list li .item .item-meta .activity{font-style:italic}#buddypress div#item-header div.generic-button{margin-top:15px}#buddypress div#item-header div.generic-button>a{display:inline-block;line-height:20px;padding:5px 15px;border:none;outline:0;box-shadow:none;font-size:12px;font-weight:700;color:#fff;background-color:var(--thim-font-title-color)}#buddypress div#item-header div.generic-button>a:hover{background-color:var(--thim-body-primary-color,#ffb606)}#buddypress div#item-header .activity{margin-top:5px}#buddypress div#item-header .item-meta{font-size:13px}#buddypress div#item-header .item-meta a{color:var(--thim-body-primary-color,#ffb606)}#buddypress div#item-header .item-meta a:hover{color:var(--thim-body-primary-color,#ffb606);text-decoration:underline}body.activity-permalink #buddypress .activity-list li.mini .activity-comments{margin-top:25px}body.activity-permalink #buddypress .activity-list li .activity-content{margin-left:90px}body.activity-permalink #buddypress #activity-stream p{margin:0;padding-top:0}#whats-new-avatar img{border-radius:50%}div.bp-avatar-status p.success,div.bp-cover-image-status p.success,#buddypress div#message p,#sitewide-notice p,#buddypress p.warning{color:#31708f;margin:0 0 40px;border:0;border-radius:0;line-height:20px;padding:10px 15px;font-size:13px;background:#d9edf7}#buddypress p.warning{color:#8a6d3b;background:#fcf8e3}div.bp-avatar-status p.success,div.bp-cover-image-status p.success{color:#3c763d;background:#dff0d8}#search-members-form{position:relative}#search-members-form #members_search{display:inline-block;line-height:30px;padding:4px 10px;border:1px solid var(--thim-border-color,#eee);color:#999;min-width:250px}#search-members-form #members_search_submit{background:transparent;width:40px;height:40px;position:absolute;right:0;top:0;color:transparent;text-align:center;padding:0}#search-members-form:before{content:"\f002";font-family:"Font Awesome 5 Free";font-weight:900;position:absolute;right:0;top:0;line-height:40px;width:40px;height:40px;text-align:center;display:inline-block;color:#999}body.activity-permalink .bp_members #buddypress div.activity-comments{margin:0;margin-left:70px}body.activity-permalink .bp_members #buddypress div.activity-comments>ul{margin:0}body.activity-permalink .bp_members #buddypress div.activity-comments>ul li{padding:25px 0;border-top:1px solid var(--thim-border-color,#eee)}#whats-new-form>h5{margin-top:0}
+/** CSS Paid Memberships Pro */
+.lp-pmpro-header,.lp-pmpro-main,.lp-pmpro-footer{overflow:hidden;width:100%}.lp-pmpro-header .list-main,.lp-pmpro-header .list-item{border:1px solid var(--thim-border-color,#eee);border-left:0;border-bottom:4px solid #ccc;min-height:200px}.lp-pmpro-header .list-main{border-left:1px solid var(--thim-border-color,#eee)}.lp-pmpro-footer .list-main,.lp-pmpro-footer .list-item{border:1px solid var(--thim-border-color,#eee);border-top:0;border-left:0;min-height:81px;padding:20px 0;vertical-align:middle}.lp-pmpro-footer .list-main{border-left:1px solid var(--thim-border-color,#eee)}.lp-pmpro-membership-list{overflow:hidden;max-width:1000px;margin:auto}.lp-membership-list-mobile .lp-pmpro-membership-list{max-width:100%;margin-bottom:50px}.lp-membership-list-mobile .lp-pmpro-membership-list:last-child{margin-bottom:0}.lp-membership-list-mobile .lp-pmpro-membership-list .list-main{width:65%}.lp-membership-list-mobile .lp-pmpro-membership-list .header-item{width:100%}.lp-pmpro-membership-list .list-main{width:34%}.lp-pmpro-membership-list .list-main .item-td{border-left:1px solid var(--thim-border-color,#eee)}.lp-pmpro-membership-list .list-item{text-align:center}.lp-pmpro-membership-list .header-item{padding-top:82px;padding-bottom:35px;position:relative;vertical-align:top}.lp-pmpro-membership-list .header-item.has-4{width:12%}.lp-pmpro-membership-list .header-item.has-3{width:22%}.lp-pmpro-membership-list .header-item.has-2{width:33%}.lp-pmpro-membership-list .header-item.position-2:before{content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:4px;width:100%;background-color:var(--thim-body-primary-color,#ffb606)}.lp-pmpro-membership-list .lp-title{font-size:1.1rem;font-weight:700;margin:10px 0 0;line-height:30px;text-transform:uppercase}.lp-pmpro-membership-list .lp-desc{font-size:0.85rem;color:#888;font-weight:400;line-height:22px;margin-bottom:22px}.lp-pmpro-membership-list .item-td{border:1px solid var(--thim-border-color,#eee);padding:10px 30px;border-top:0;border-left:0;line-height:25px}.lp-pmpro-membership-list .item-td a{color:#666}.lp-pmpro-membership-list .item-td a:hover{color:var(--thim-body-primary-color,#ffb606)}.lp-pmpro-membership-list .item-td.item-desc{color:#55b450;font-weight:700}.lp-pmpro-membership-list .item-td.item-check{color:#55b450;font-size:17px}.lp-pmpro-membership-list .item-td.item-none{color:#bbb;font-size:17px}.lp-pmpro-membership-list .lp-price{font-size:2.2rem;font-weight:700;line-height:1.3em;color:var(--thim-font-title-color)}.lp-pmpro-membership-list .lp-price .currency{font-size:16px;vertical-align:super}.lp-pmpro-membership-list .lp-price .expired{font-size:24px;line-height:26px;font-weight:400}.lp-pmpro-membership-list .lp-price .expired .currency{font-size:14px}.lp-membership-list-mobile .lp-pmpro-membership-list .item_level{border:solid 1px #e7e7e7;margin-bottom:20px}.lp-membership-list-mobile .lp-pmpro-membership-list .item_level .list_courses{border-top:1px solid var(--thim-border-color,#eee)}.lp-membership-list-mobile .lp-pmpro-membership-list .item_level .list_courses .item-td{text-align:center}.lp-membership-list-mobile .lp-pmpro-membership-list .item_level .footer-item{text-align:center;padding:20px 0}#pmpro_paypalexpress_checkout input{border:0;padding:0}form.pmpro_form .lp-pmpro-name{width:150px;height:150px;float:left;clear:none;margin:0;margin-right:20px;position:relative;background-color:var(--thim-body-primary-color,#ffb606)}form.pmpro_form .lp-pmpro-name h4{color:#fff;line-height:30px;font-size:20px;font-weight:700;text-transform:uppercase;text-align:center;vertical-align:middle;margin:0;position:absolute;left:10px;right:10px;top:50%;-webkit-transform:translate(0,-50%);-moz-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%)}form.pmpro_form .lp-pmpro-content{width:calc(100% - 170px);width:-webkit-calc(100% - 170px);width:-moz-calc(100% - 170px);float:right;clear:none;margin:0}form.pmpro_form .lp-pmpro-desc{text-align:left;float:none;clear:both;margin:0;margin-bottom:5px;line-height:25px}form.pmpro_form .lp-pmpro-desc label,form.pmpro_form .lp-pmpro-desc p{display:inline-block;margin:0}form.pmpro_form .lp-pmpro-desc label{margin-right:5px;width:auto}form.pmpro_form .lp-pmpro-desc.lp-pmpro-description{margin-top:15px}form.pmpro_form h3.pmpro_thead-name{margin:0;font-size:17px;font-weight:700;padding-left:10px}form.pmpro_form .pmpro_thead-msg{font-style:normal;font-size:14px;color:#999}form.pmpro_form .pmpro_thead-msg a{font-weight:700;color:var(--thim-body-primary-color,#ffb606);text-transform:none;margin-left:5px}form.pmpro_form .pmpro_thead-msg a:hover{text-decoration:underline}form.pmpro_form .lp-pmpro-account-info .lp-pmpro-desc{max-width:500px;float:none;overflow:hidden;margin:auto;clear:both;margin-bottom:15px}form.pmpro_form .lp-pmpro-account-info .lp-pmpro-desc label{min-width:175px;text-align:left;font-size:15px;font-weight:700;color:#888}form.pmpro_form .lp-pmpro-account-info abbr[title],form.pmpro_form .lp-pmpro-account-info abbr[data-original-title]{border-bottom:0;vertical-align:bottom;margin-left:5px;color:#999}#pmpro_form tbody tr td.lp-pmpro-td,#pmpro_pricing_fields tbody tr td.lp-pmpro-td{padding:30px 40px}#pmpro_form .pmpro_submit{text-align:center}#pmpro_form .pmpro_submit span{float:none;overflow:hidden;display:block}#pmpro_form table{margin-bottom:40px}.thim-lp-pmpro-desc{max-width:430px;margin:auto}.thim-lp-pmpro-desc h4{font-size:22px;margin:0;margin-bottom:15px}.thim-lp-pmpro-desc .description{margin-bottom:20px;color:#888}.thim-lp-pmpro-desc .readmore-link{text-transform:uppercase;cursor:pointer;font-size:14px;font-weight:700}.thim-lp-pmpro-desc .readmore-link:hover{text-decoration:underline}.thim-lp-pmpro-desc .readmore-link .fa{margin-left:5px}.pmpro-checkout .lp-pmpro-membership-list{max-width:100%}.pmpro-checkout .lp-pmpro-membership-list .list-main{width:74%}.pmpro-checkout .pmpro-has-access #pmpro_pricing_fields tbody tr td{background:#F9FCFF;padding:14px 30px}.pmpro-checkout .pmpro-has-access #pmpro_pricing_fields thead tr th{padding:10px 30px}.pmpro-checkout .pmpro-has-access #pmpro_pricing_fields .price{background:#fff;max-width:100px;padding:5px 25px;font-weight:500;box-shadow:0 4px 15px rgba(157,200,228,0.25)}.pmpro-checkout #pmpro_user_fields thead tr th{padding:10px 30px}.pmpro-checkout #pmpro_user_fields tbody tr td{background:#F9FCFF}.pmpro-checkout #pmpro_user_fields tbody tr td div{padding:15px 24px;width:50%;float:left}.pmpro-checkout #pmpro_user_fields tbody tr td div input{width:100%}.pmpro-checkout #pmpro_user_fields tbody tr td div .pmpro_asterisk{display:none}@media (max-width:500px){.pmpro-checkout #pmpro_user_fields tbody tr td div{width:100%;float:none}}.pmpro-has-access .pmpro_submit{margin-left:0 !important}.pmpro-has-access .pmpro_error{color:#a94442;background:#f2dede}.pmpro-has-access .pmpro_thead-name{text-transform:uppercase;color:var(--thim-font-title-color)}.pmpro-has-access .pmpro_thead-msg{text-transform:lowercase}.pmpro-has-access ul{list-style-type:none}.pmpro-has-access .entry-content ul{list-style:inherit}.pmpro-has-access .navigation a,.pmpro-has-access .pmpro_actionlinks a{font-weight:bold;font-size:15px;padding:0;margin:0 10px;line-height:30px}.pmpro-has-access .navigation a:first-child,.pmpro-has-access .pmpro_actionlinks a:first-child{margin-left:0}.pmpro-has-access .navigation a:last-child,.pmpro-has-access .pmpro_actionlinks a:last-child{margin-right:0}.pmpro-has-access input.pmpro_btn,.pmpro-has-access a.pmpro_btn{border:none;padding:5px 25px;border-radius:0;text-transform:uppercase;outline:none;line-height:30px;color:var(--thim-button-text-color);background-color:var(--thim-body-primary-color,#ffb606)}.pmpro-has-access input.pmpro_btn:hover,.pmpro-has-access a.pmpro_btn:hover{color:var(--thim-button-text-color);background-color:var(--thim-button-hover-color)}.pmpro-has-access table.pmpro_invoice{margin-top:40px}.pmpro-has-access table.pmpro_invoice thead tr th,.pmpro-has-access table#pmpro_levels_table thead tr th,.pmpro-has-access #pmpro_account-membership thead tr th,.pmpro-has-access #pmpro_account-invoices thead tr th,.pmpro-has-access #pmpro_cancel thead tr th,.pmpro-has-access #pmpro_invoices_table thead tr th{border:1px solid var(--thim-border-color,#eee);text-align:center;padding:10px 15px}.pmpro-has-access table.pmpro_invoice tbody .odd td,.pmpro-has-access table#pmpro_levels_table tbody .odd td,.pmpro-has-access #pmpro_account-membership tbody .odd td,.pmpro-has-access #pmpro_account-invoices tbody .odd td,.pmpro-has-access #pmpro_cancel tbody .odd td,.pmpro-has-access #pmpro_invoices_table tbody .odd td{background-color:transparent}.pmpro-has-access table.pmpro_invoice tbody .active td,.pmpro-has-access table#pmpro_levels_table tbody .active td,.pmpro-has-access #pmpro_account-membership tbody .active td,.pmpro-has-access #pmpro_account-invoices tbody .active td,.pmpro-has-access #pmpro_cancel tbody .active td,.pmpro-has-access #pmpro_invoices_table tbody .active td{background-color:var(--thim-border-color,#eee)}.pmpro-has-access table.pmpro_invoice tbody tr td,.pmpro-has-access table#pmpro_levels_table tbody tr td,.pmpro-has-access #pmpro_account-membership tbody tr td,.pmpro-has-access #pmpro_account-invoices tbody tr td,.pmpro-has-access #pmpro_cancel tbody tr td,.pmpro-has-access #pmpro_invoices_table tbody tr td{text-transform:capitalize;text-align:center;padding:10px 15px;border:1px solid var(--thim-border-color,#eee)}.pmpro-has-access table#pmpro_levels_table tbody tr td .pmpro_btn{border-radius:0;border:none;font-size:15px}.pmpro-has-access #pmpro_account-profile ul{margin:0}.pmpro-has-access #pmpro_account-profile ul li{list-style-type:none}.pmpro-has-access #pmpro_account-profile .pmpro_actionlinks{margin-top:30px}.pmpro-has-access #pmpro_cancel hr{display:none}.pmpro-has-access #pmpro_cancel h3{margin:0 0 30px 0;text-transform:uppercase}.pmpro-has-access #pmpro_account .pmpro_box{margin-top:0}.pmpro-has-access #pmpro_account .pmpro_box h3{margin:20px 0 30px 0;text-transform:uppercase}.pmpro-has-access #pmpro_billing_address_fields thead th,.pmpro-has-access #pmpro_payment_information_fields thead th{text-transform:uppercase}.pmpro-has-access #pmpro_billing_address_fields tbody label,.pmpro-has-access #pmpro_payment_information_fields tbody label{font-weight:400;font-size:15px;text-align:left;width:175px}.pmpro-has-access #pmpro_billing_address_fields tbody select,.pmpro-has-access #pmpro_billing_address_fields tbody input,.pmpro-has-access #pmpro_payment_information_fields tbody select,.pmpro-has-access #pmpro_payment_information_fields tbody input{border-radius:0;border:1px solid var(--thim-border-color,#eee);padding:7px 10px;height:40px;max-width:230px;outline:none;margin:0}.pmpro-has-access #pmpro_billing_address_fields tbody select,.pmpro-has-access #pmpro_payment_information_fields tbody select{font-size:15px}.pmpro-has-access #pmpro_billing_address_fields tbody #ExpirationMonth,.pmpro-has-access #pmpro_billing_address_fields tbody #ExpirationYear,.pmpro-has-access #pmpro_payment_information_fields tbody #ExpirationMonth,.pmpro-has-access #pmpro_payment_information_fields tbody #ExpirationYear{width:calc(15% - 3.5px);width:-webkit-calc(15% - 3.5px);width:-moz-calc(15% - 3.5px)}.pmpro-has-access #pmpro_billing_address_fields tbody #ExpirationMonth+.pmpro_asterisk,.pmpro-has-access #pmpro_payment_information_fields tbody #ExpirationMonth+.pmpro_asterisk{display:none}.pmpro-has-access #pmpro_billing_address_fields tbody .pmpro_error,.pmpro-has-access #pmpro_payment_information_fields tbody .pmpro_error{border-color:#a00;background-color:transparent}.pmpro-has-access #pmpro_billing_address_fields abbr,.pmpro-has-access #pmpro_payment_information_fields abbr{color:red;font-weight:700;border:0}.pmpro-has-access #pmpro_pricing_fields thead tr th,.pmpro-has-access #pmpro_billing_address_fields thead tr th,.pmpro-has-access #pmpro_payment_information_fields thead tr th{border:1px solid var(--thim-border-color,#eee);padding:10px 15px}.pmpro-has-access #pmpro_pricing_fields tbody tr td,.pmpro-has-access #pmpro_billing_address_fields tbody tr td,.pmpro-has-access #pmpro_payment_information_fields tbody tr td{padding:10px 15px;border:1px solid var(--thim-border-color,#eee)}.pmpro-has-access #pmpro_billing_address_fields tr td>div{width:33.33%;float:left;margin-bottom:10px;padding-right:20px}.pmpro-has-access #pmpro_billing_address_fields tr td>div:nth-child(3n){padding-right:0}.pmpro-has-access #pmpro_billing_address_fields tr td>div:nth-child(3n+1){clear:both}@media (max-width:768px){.pmpro-has-access #pmpro_billing_address_fields tr td>div{width:50%}.pmpro-has-access #pmpro_billing_address_fields tr td>div:nth-child(3n){padding-right:20px}.pmpro-has-access #pmpro_billing_address_fields tr td>div:nth-child(2n){padding-right:0}.pmpro-has-access #pmpro_billing_address_fields tr td>div:nth-child(3n+1){clear:none}.pmpro-has-access #pmpro_billing_address_fields tr td>div:nth-child(2n+1){clear:both}}@media (max-width:480px){.pmpro-has-access #pmpro_billing_address_fields tr td>div{width:100%;float:none;padding-right:0}.pmpro-has-access #pmpro_billing_address_fields tr td>div:nth-child(2n+1){clear:none}}.pmpro-has-access a,.pmpro-has-access thead th{color:var(--thim-font-title-color)}.pmpro-has-access a:hover,.pmpro-has-access thead th:hover{color:var(--thim-body-primary-color,#ffb606)}#pmpro_account #pmpro_account-membership{padding-top:0}#pmpro_account #pmpro_account-membership>h3{margin-top:0}.pmpro_message{color:#31708f;border:0;border-radius:0;line-height:20px;padding:10px 15px;font-size:13px;background:#d9edf7}.lp_pmpro_courses_by_level .level-wrap{margin-bottom:50px;border:1px solid var(--thim-border-color,#eee);text-align:center;-webkit-transition:all 0.3s ease-in-out;-khtml-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;position:relative}.lp_pmpro_courses_by_level .level-wrap.feature:before{content:"";position:absolute;width:51px;height:51px;top:-3px;right:-3px}.lp_pmpro_courses_by_level .level-wrap header{text-align:center;color:var(--thim-font-title-color)}.lp_pmpro_courses_by_level .level-wrap header .lp_pmpro_title_level{text-transform:uppercase;margin:0;position:relative;text-align:center;font-size:18px;color:#FFF;line-height:62px;padding:10px 30px;overflow:hidden}.lp_pmpro_courses_by_level .level-wrap header .lp_pmpro_title_level:before{content:"";position:absolute;top:-70px;left:-50px;right:-50px;bottom:0;z-index:-1;border-radius:0 0 50% 50%;background:var(--thim-body-primary-color,#ffb606)}.lp_pmpro_courses_by_level .level-wrap header .lp_pmpro_price_level{text-align:center;padding:35px 30px 30px}.lp_pmpro_courses_by_level .level-wrap header .lp_pmpro_price_level .price{font-size:40px;font-weight:400;line-height:50px;margin:0}.lp_pmpro_courses_by_level .level-wrap header .lp_pmpro_price_level .expired{color:#999;line-height:25px;margin:0}.lp_pmpro_courses_by_level .level-wrap footer{padding:25px 30px 40px;text-align:center}.lp_pmpro_courses_by_level .level-wrap footer a{font-size:13px;font-weight:700;line-height:30px;display:inline-block;padding:5px 25px;color:var(--thim-button-text-color);background-color:var(--thim-body-primary-color,#ffb606)}.lp_pmpro_courses_by_level .level-wrap footer a:hover{background-color:var(--thim-button-hover-color)}.lp_pmpro_courses_by_level .level-wrap main{padding:0 30px}.lp_pmpro_courses_by_level .level-wrap ul{padding:0}.lp_pmpro_courses_by_level .level-wrap ul li{padding:12px 0;border-top:1px solid var(--thim-border-color,#eee)}.lp_pmpro_courses_by_level .level-wrap ul li a{line-height:25px;color:#999;display:block}.lp_pmpro_courses_by_level .level-wrap ul li a:hover{color:var(--thim-font-title-color)}.lp_pmpro_courses_by_level .level-wrap:hover{box-shadow:0 0 10px rgba(0,0,0,0.1)}.lp_pmpro_courses_by_level .navigation{clear:both}body #pmpro_account .pmpro_box{border-top:0}form.pmpro_form .pmpro_message{margin-top:0;margin-bottom:40px}form.pmpro_form table{margin-bottom:60px}form.pmpro_form .pmpro_submit{margin:0;overflow:hidden}body form.pmpro_form .input,body form.pmpro_form textarea,body form.pmpro_form select{border-color:var(--thim-border-color,#eee)}body table,body td,body tr{border-color:var(--thim-border-color,#eee)}.pmpro-has-access .mo-openid-app-icons{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;webkit-box-direction:normal;-webkit-box-orient:vertical;-moz-box-direction:normal;-moz-box-orient:vertical;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;align-items:center;width:100%;padding:0 30px;position:relative;z-index:2}.learnpress-v4 .pmpro-has-access .entry-content .lp-profile-content ul{list-style:none}.pmpro-has-access #pmpro_cancel hr{display:none}.pmpro-has-access #pmpro_cancel h3{margin:0 0 30px 0;text-transform:uppercase}@media (max-width:767px){body form.pmpro_form .input[type=email]{width:90%}}@media (max-width:600px){body form.pmpro_form .input[type=email],form.pmpro_form input[type=text].input,form.pmpro_form input[type=password].input{max-width:none}}@media (max-width:480px){.lp-pmpro-content{float:none;width:100%}.lp_pmpro_courses_by_level .thim-level-wrap{width:100%}.pmpro-has-access .pmpro_thead-msg,.pmpro-has-access .pmpro_thead-name{width:100%;float:none}.pmpro-has-access .navigation a,.pmpro-has-access .pmpro_actionlinks a{display:block;margin-left:0;margin-right:0}}
+/** CSS RevSlider */
+.thim_overlay_gradient .textwidget p,.thim_overlay_gradient_2 .textwidget p{margin-bottom:0}.thim_overlay_gradient .rev_slider li .slotholder,.thim_overlay_gradient_2 .rev_slider li .slotholder{position:relative}.thim_overlay_gradient .rev_slider li .slotholder:before,.thim_overlay_gradient_2 .rev_slider li .slotholder:before{background:#6020d2;background:-moz-linear-gradient(left,#6020d2 0%,#2e67f5 100%);background:-webkit-linear-gradient(left,#6020d2 0%,#2e67f5 100%);background:linear-gradient(to right,#6020d2 0%,#2e67f5 100%);filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#6020d2', endColorstr='#2e67f5', GradientType=1)";content:"";position:absolute;left:0;top:0;width:100%;height:100%;filter:alpha(opacity=46);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=46)";-webkit-opacity:0.46;-khtml-opacity:0.46;-moz-opacity:0.46;-ms-opacity:0.46;-o-opacity:0.46;opacity:0.46}.thim_overlay_gradient .rev_slider li .slotholder:after,.thim_overlay_gradient_2 .rev_slider li .slotholder:after{position:absolute;height:200px;width:100%;content:"";bottom:0;opacity:0.5;background:-moz-linear-gradient(top,rgba(125,185,232,0) 0%,rgb(0,0,0) 100%);background:-webkit-linear-gradient(top,rgba(125,185,232,0) 0%,rgb(0,0,0) 100%);background:linear-gradient(to bottom,rgba(125,185,232,0) 0%,rgb(0,0,0) 100%);filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#007db9e8', endColorstr='#000000', GradientType=0)"}.thim_overlay_gradient .rev_slider li .thim-slider-button:hover,.thim_overlay_gradient_2 .rev_slider li .thim-slider-button:hover{color:#fff !important;background:#6020d2;background:-moz-linear-gradient(left,#6020d2 0%,#2e67f5 100%);background:-webkit-linear-gradient(left,#6020d2 0%,#2e67f5 100%);background:linear-gradient(to right,#6020d2 0%,#2e67f5 100%);filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#6020d2', endColorstr='#2e67f5', GradientType=1)"}.thim_overlay_gradient rs-sbg-px>rs-sbg-wrap>rs-sbg.thim-overlayed:before,.thim_overlay_gradient rs-sbg-px>rs-sbg-wrap>rs-sbg:before,.thim_overlay_gradient_2 rs-sbg-px>rs-sbg-wrap>rs-sbg.thim-overlayed:before,.thim_overlay_gradient_2 rs-sbg-px>rs-sbg-wrap>rs-sbg:before{background:#6020d2;background:-moz-linear-gradient(left,#6020d2 0%,#2e67f5 100%);background:-webkit-linear-gradient(left,#6020d2 0%,#2e67f5 100%);background:linear-gradient(to right,#6020d2 0%,#2e67f5 100%);filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#6020d2', endColorstr='#2e67f5', GradientType=1)";content:"";position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:unset;filter:alpha(opacity=46);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=46)";-webkit-opacity:0.46;-khtml-opacity:0.46;-moz-opacity:0.46;-ms-opacity:0.46;-o-opacity:0.46;opacity:0.46}.thim_overlay_gradient rs-layer-wrap>rs-loop-wrap>rs-mask-wrap>.rs-layer.thim-slider-button:hover,.thim_overlay_gradient_2 rs-layer-wrap>rs-loop-wrap>rs-mask-wrap>.rs-layer.thim-slider-button:hover{color:#fff !important;background:#6020d2;background:-moz-linear-gradient(left,#6020d2 0%,#2e67f5 100%);background:-webkit-linear-gradient(left,#6020d2 0%,#2e67f5 100%);background:linear-gradient(to right,#6020d2 0%,#2e67f5 100%);filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#6020d2', endColorstr='#2e67f5', GradientType=1)"}.thim_overlay_gradient_2 .rev_slider li .slotholder{position:relative}.thim_overlay_gradient_2 .rev_slider li .slotholder:before{background:#6a11cb;background:-moz-linear-gradient(left,#6a11cb 0%,#2575fc 100%);background:-webkit-linear-gradient(left,#6a11cb 0%,#2575fc 100%);background:linear-gradient(to right,#6a11cb 0%,#2575fc 100%);filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a11cb', endColorstr='#2575fc', GradientType=1)";filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";-webkit-opacity:0.9;-khtml-opacity:0.9;-moz-opacity:0.9;-ms-opacity:0.9;-o-opacity:0.9;opacity:0.9}.thim_overlay_gradient_2 rs-sbg-px>rs-sbg-wrap>rs-sbg.thim-overlayed:before{background:#6a11cb;background:-moz-linear-gradient(left,#6a11cb 0%,#2575fc 100%);background:-webkit-linear-gradient(left,#6a11cb 0%,#2575fc 100%);background:linear-gradient(to right,#6a11cb 0%,#2575fc 100%);filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a11cb', endColorstr='#2575fc', GradientType=1)";filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";-webkit-opacity:0.9;-khtml-opacity:0.9;-moz-opacity:0.9;-ms-opacity:0.9;-o-opacity:0.9;opacity:0.9}.rev_slider .tp-tabs.hebe{border-top:1px solid rgba(255,255,255,0.2)}.rev_slider .tp-tabs.hebe .tp-tab-mask{width:1290px !important;left:auto !important;margin:0 auto;transform:matrix(1,0,0,1,0,0) !important;max-width:100% !important;bottom:auto;top:auto}.rev_slider .tp-tabs.hebe .tp-tab-mask .tp-tabs-inner-wrapper{width:100% !important}.rev_slider .tp-tabs.hebe .tp-tab-desc{font-weight:300}.rev_slider .tp-tabs.hebe .tp-tab{position:inherit;padding:45px 0;display:table-cell;padding-left:45px;padding-right:10px;width:25% !important;left:unset !important;opacity:1;border-top:4px solid transparent}.rev_slider .tp-tabs.hebe .tp-tab:before{content:"1";border:1px solid;position:absolute;border-radius:100%;left:0;margin-top:-15px;top:50%;color:#aaa;width:30px;line-height:30px;text-align:center}.rev_slider .tp-tabs.hebe .tp-tab>div{display:table-cell;line-height:20px;color:#aaaaaa;vertical-align:middle}.rev_slider .tp-tabs.hebe .tp-tab:hover>div,.rev_slider .tp-tabs.hebe .tp-tab:hover:before{color:#fff}.rev_slider .tp-tabs.hebe .tp-tab.selected{border-top:4px solid #fff}.rev_slider .tp-tabs.hebe .tp-tab.selected>div{color:#fff}.rev_slider .tp-tabs.hebe .tp-tab.selected:before{color:#fff}.rev_slider .tp-tabs.hebe .tp-tab:nth-child(2):before{content:"2"}.rev_slider .tp-tabs.hebe .tp-tab:nth-child(3):before{content:"3"}.rev_slider .tp-tabs.hebe .tp-tab:nth-child(4):before{content:"4"}.rev_slider .tp-tabs.hebe .tp-tab:nth-child(5):before{content:"5"}.tp-caption.rev-btn{-webkit-transition:all 0.3s !important;-khtml-transition:all 0.3s !important;-moz-transition:all 0.3s !important;-ms-transition:all 0.3s !important;-o-transition:all 0.3s !important;transition:all 0.3s !important}.rev-btn.thim-slider-button{color:var(--thim-button-text-color);background-color:var(--thim-body-primary-color,#ffb606)}.rev-btn.thim-slider-button:hover{background-color:var(--thim-button-hover-color);color:var(--thim-button-text-color)}.thim-demo-university-3 .rev-btn,.thim-demo-university-4 .rev-btn{font-family:var(--thim-font-body-font-family)}.revslider-initialised .tp-tabs.hebe{border-top:1px solid rgba(255,255,255,0.2)}.revslider-initialised .tp-tabs.hebe .tp-tab-mask{width:1392px !important;left:auto !important;margin:0 auto;transform:matrix(1,0,0,1,0,0) !important;max-width:100% !important;bottom:auto;top:auto}.revslider-initialised .tp-tabs.hebe .tp-tab-mask .tp-tabs-inner-wrapper{width:100% !important;display:flex}.revslider-initialised .tp-tabs.hebe .tp-tab-desc{font-weight:300}.revslider-initialised .tp-tabs.hebe .tp-tab{position:inherit;padding:0 10px 0 45px;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;align-items:center;width:25% !important;left:unset !important;opacity:1;border-top:4px solid transparent}.revslider-initialised .tp-tabs.hebe .tp-tab:before{content:"1";border:1px solid;position:absolute;border-radius:100%;left:0;margin-top:-15px;top:50%;color:#aaa;width:30px;line-height:30px;text-align:center}.revslider-initialised .tp-tabs.hebe .tp-tab>div{display:table-cell;line-height:20px;color:#aaaaaa;vertical-align:middle}.revslider-initialised .tp-tabs.hebe .tp-tab:hover>div,.revslider-initialised .tp-tabs.hebe .tp-tab:hover:before{color:#fff}.revslider-initialised .tp-tabs.hebe .tp-tab.selected{border-top:4px solid #fff}.revslider-initialised .tp-tabs.hebe .tp-tab.selected>div{color:#fff}.revslider-initialised .tp-tabs.hebe .tp-tab.selected:before{color:#fff}.revslider-initialised .tp-tabs.hebe .tp-tab:nth-child(2):before{content:"2"}.revslider-initialised .tp-tabs.hebe .tp-tab:nth-child(3):before{content:"3"}.revslider-initialised .tp-tabs.hebe .tp-tab:nth-child(4):before{content:"4"}.revslider-initialised .tp-tabs.hebe .tp-tab:nth-child(5):before{content:"5"}.revslider-initialised .tp-tabs.hebe_thim{border-top:1px solid rgba(255,255,255,0.2)}.revslider-initialised .tp-tabs.hebe_thim .tp-tab-mask{width:1290px !important;left:auto !important;margin:0 auto;transform:matrix(1,0,0,1,0,0) !important;max-width:100% !important;bottom:auto;top:auto}.revslider-initialised .tp-tabs.hebe_thim .tp-tab-mask .tp-tabs-inner-wrapper{width:100% !important;display:flex}.revslider-initialised .tp-tabs.hebe_thim .tp-tab-desc{font-weight:300}.revslider-initialised .tp-tabs.hebe_thim .tp-tab{position:inherit;padding:0 10px 0 45px;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;align-items:center;width:25% !important;left:unset !important;opacity:1;border-top:4px solid transparent}.revslider-initialised .tp-tabs.hebe_thim .tp-tab:before{content:"1";border:1px solid;position:absolute;border-radius:100%;left:0;margin-top:-15px;top:50%;color:rgba(255,255,255,0.7);width:30px;line-height:30px;text-align:center}.revslider-initialised .tp-tabs.hebe_thim .tp-tab>div{display:table-cell;line-height:20px;color:rgba(255,255,255,0.7);vertical-align:middle}.revslider-initialised .tp-tabs.hebe_thim .tp-tab:hover>div,.revslider-initialised .tp-tabs.hebe_thim .tp-tab:hover:before{color:#fff}.revslider-initialised .tp-tabs.hebe_thim .tp-tab.selected{border-top:2px solid #fff}.revslider-initialised .tp-tabs.hebe_thim .tp-tab.selected>div{color:#fff}.revslider-initialised .tp-tabs.hebe_thim .tp-tab.selected:before{color:#fff}.revslider-initialised .tp-tabs.hebe_thim .tp-tab:nth-child(2):before{content:"2"}.revslider-initialised .tp-tabs.hebe_thim .tp-tab:nth-child(3):before{content:"3"}.revslider-initialised .tp-tabs.hebe_thim .tp-tab:nth-child(4):before{content:"4"}.revslider-initialised .tp-tabs.hebe_thim .tp-tab:nth-child(5):before{content:"5"}.textwidget .rev_slider_wrapper.fullscreen-container{overflow:hidden !important}.rev_slider_wrapper .tp-bullet{width:10px;height:10px;border-radius:50%;border:2px solid #82888d}.rev_slider_wrapper .tp-bullet.selected{border-color:var(--thim-body-primary-color,#ffb606);background-color:var(--thim-body-primary-color,#ffb606)}.have_scroll_bottom{position:relative}.have_scroll_bottom .scroll_slider_tab{position:absolute;bottom:0;right:0;width:100%;text-align:right;z-index:1}.have_scroll_bottom .scroll_slider_tab .to_bottom{width:60px;text-align:center;position:absolute;top:-105px;margin-left:-50px;padding:12px 0;display:inline-block;border-left:1px solid rgba(255,255,255,0.2)}.have_scroll_bottom .scroll_slider_tab .to_bottom i{font-family:"thim-ekits";display:block;font-style:inherit;color:#fff;line-height:7px;font-size:12px}.have_scroll_bottom .scroll_slider_tab .to_bottom i.icon2{opacity:0.5}.have_scroll_bottom .rev_slider .tp-tabs.hebe .tp-tab-mask .tp-tabs-inner-wrapper{padding-right:70px}.have_scroll_bottom .revslider-initialised .tp-tabs.hebe .tp-tab-mask .tp-tabs-inner-wrapper{padding-right:70px}.have_scroll_bottom .revslider-initialised .tp-tabs.hebe_thim .tp-tab-mask .tp-tabs-inner-wrapper{padding-right:70px}.thim-click-to-bottom,.have_scroll_bottom .scroll_slider_tab .to_bottom i{-webkit-animation:bounce 2s infinite;-moz-animation:bounce 2s infinite;-ms-animation:bounce 2s infinite;-o-animation:bounce 2s infinite;animation:bounce 2s infinite}.thim-click-to-bottom,.have_scroll_bottom .scroll_slider_tab .to_bottom svg{margin-bottom:20px}.tp-caption.thim-slider-heading{font-size:100px;margin:0 !important}.tp-caption.thim-slider-sub-heading{font-size:24px}.tp-caption.thim-slider-button{transition:all 0.3s !important;white-space:nowrap !important}rs-fullwidth-wrap rs-module-wrap[data-alias=home-one-instructor]{left:0 !important}@media (min-width:1025px) and (max-width:1400px){.rev_slider .tp-tabs.hebe .tp-tab-mask{width:1110px !important}.rev_slider .tp-tabs.hebe .tp-tab-mask .tp-tabs-inner-wrapper{width:100% !important}.rev_slider .tp-tabs.hebe .tp-tab{left:auto !important;position:relative;float:left;width:25% !important}}@media (min-width:1024px) and (max-width:1024px){.rev_slider .tp-tabs.hebe .tp-tab{left:auto !important;position:relative;float:left;width:25% !important;padding-left:50px}.rev_slider .tp-tabs.hebe .tp-tab:before{left:10px}}@media (min-width:768px) and (max-width:992px){.tp-caption.thim-slider-heading{font-size:60px !important}}@media (max-width:1400px){.revslider-initialised .tp-tabs.hebe .tp-tab-mask{width:1140px !important;padding:0 15px}.revslider-initialised .tp-tabs.hebe_thim .tp-tab-mask{width:1140px !important;padding:0 15px}}@media (max-width:1200px){.thim-top-rev-slider{position:relative}.thim-top-rev-slider .tp-rightarrow{right:0;left:auto !important}}@media (max-width:1024px){.revslider-initialised .tp-tabs.hebe .tp-tab-mask{width:1140px !important;padding:0 15px}.revslider-initialised .tp-tabs.hebe_thim .tp-tab-mask{width:1140px !important;padding:0 15px}.tp-caption.thim-slider-heading{font-size:90px}}@media (max-width:991px){.rev_slider .tp-tabs.hebe{display:none}}@media (max-width:768px){.revslider-initialised .tp-tabs.hebe .tp-tab{display:block}.revslider-initialised .tp-tabs.hebe .tp-tab:before{left:50%;margin-left:-15px}.revslider-initialised .tp-tabs.hebe .tp-tab .tp-tab-desc{display:none}.revslider-initialised .tp-tabs.hebe_thim .tp-tab{display:block}.revslider-initialised .tp-tabs.hebe_thim .tp-tab:before{left:50%;margin-left:-15px}.revslider-initialised .tp-tabs.hebe_thim .tp-tab .tp-tab-desc{display:none}.tp-caption.thim-slider-heading{font-size:70px}}
+/** CSS TC Megamenu */
+@media (min-width:1025px){#masthead.header_v4 .thim-nav-wrapper .tc-menu-layout-column>.sub-menu{left:0;right:unset;transform:unset}}#masthead.header_v4 .navbar-nav li.tc-menu-layout-builder .sub-menu .widget-title{font-weight:500;font-size:16px;text-transform:none}.tc-menu-column-hide-title .tc-megamenu-title{display:none !important}.tc-megamenu-wrapper>.vc_row{display:flex}.tc-megamenu-wrapper>.vc_row>.vc_column_container:last-child:after{display:none}.tc-megamenu-wrapper>.vc_row>.vc_column_container:after{content:"";top:7px;bottom:5px;width:1px;position:absolute;background:var(--thim-border-color,#eee);right:1px;min-height:360px}.mega-sub-menu[class*=tc-columns-]>.row>li:before{display:none}.tc-menu-layout-builder .widget-title,.widget_area .submenu-widget .widget-title{text-transform:uppercase;font-size:14px;font-weight:700;line-height:25px;text-align:left}.tc-menu-layout-builder .single-image,.widget_area .submenu-widget .single-image{padding-top:8px;padding-bottom:8px}.tc-menu-layout-builder .course-item .course-thumbnail,.widget_area .submenu-widget .course-item .course-thumbnail{padding-top:8px;padding-bottom:8px}.tc-menu-layout-builder .course-item .course-thumbnail a,.widget_area .submenu-widget .course-item .course-thumbnail a{padding-bottom:6px;padding-top:3px;display:block}.thim-megamenu-row>.panel-grid-cell{padding-right:30px !important;position:relative}.thim-megamenu-row>.panel-grid-cell:after{content:"";top:7px;bottom:5px;width:1px;position:absolute;background:var(--thim-border-color,#eee);right:1px;min-height:360px}.thim-megamenu-row>.panel-grid-cell:first-child{padding-left:0 !important}.thim-megamenu-row>.panel-grid-cell:last-child{padding-right:0 !important}.thim-megamenu-row>.panel-grid-cell:last-child:after{display:none}.tc-megamenu-wrapper .vc_row>.vc_column_container:not(:last-of-type){padding-right:30px;padding-left:30px}.navbar-nav>li>.submenu-widget .thim-megamenu-row .widget_single-images img{margin-bottom:10px}.navbar-nav>li>.tc-menu-inner span.tc-icon{margin-right:7px;display:inline-block}.navbar-nav>li .sub-menu span.tc-icon{display:inline-block;margin-right:10px}@media only screen and (min-width:769px) and (max-width:1200px){.navbar-nav li.multicolumn .submenu_columns_1{width:194px}.navbar-nav li.multicolumn .submenu_columns_2{width:388px}.navbar-nav li.multicolumn .submenu_columns_3{width:582px}.navbar-nav li.multicolumn .submenu_columns_4{width:776px}.navbar-nav li.multicolumn .submenu_columns_5{width:970px}.navbar-nav li.dropdown_full_width [class*=submenu_columns].sub-menu{width:100%}.navbar-nav li.drop_to_center .submenu_columns_1{left:-55px}.navbar-nav li.drop_to_center .submenu_columns_2{left:-152px}.navbar-nav li.drop_to_center .submenu_columns_3{left:-252px}.navbar-nav li.drop_to_center .submenu_columns_4{left:-347px}.navbar-nav li.drop_to_center .submenu_columns_5{left:-450px}}@media (max-width:1024px){.tc-megamenu-wrapper>.vc_row{display:block !important;margin-bottom:0 !important}.tc-megamenu-wrapper>.vc_row .wpb_column{width:100% !important;padding:0 !important}.tc-megamenu-wrapper>.vc_row .wpb_wrapper>div:not(.vc_wp_custommenu){display:none}.tc-megamenu-wrapper>.vc_row .wpb_wrapper .vc_wp_custommenu{margin-bottom:0}.tc-menu-layout-builder>.sub-menu{display:none}.tc-menu-layout-builder>.sub-menu .widget:not(.widget_nav_menu){display:none}.tc-menu-layout-builder>.sub-menu .panel-grid-cell{margin-bottom:0 !important;padding-right:0 !important}}@media (min-width:1025px){.navbar-nav>li.multicolumn [class*=submenu_columns] .sub-menu{position:static !important;display:block !important;width:auto;border:none;box-shadow:0 0 0;padding:0}.navbar-nav>li.multicolumn [class*=submenu_columns]>li,.navbar-nav [class*=submenu_columns]>aside{float:left}.navbar-nav>li.multicolumn [class*=submenu_columns]>aside{padding:15px}.submenu-widget{padding:10px}.navbar-nav .submenu_columns_2>li,.navbar-nav .submenu_columns_2>aside{width:50%}.navbar-nav .submenu_columns_3>li,.navbar-nav .submenu_columns_3>aside{width:33.33333%}.navbar-nav .submenu_columns_4>li,.navbar-nav .submenu_columns_4>aside{width:25%}.navbar-nav .submenu_columns_5>li,.navbar-nav .submenu_columns_5>aside{width:20%}.navbar-nav .dropdown_full_width{position:static}.navbar-nav li.multicolumn .submenu_columns_1{width:233px}.navbar-nav li.multicolumn .submenu_columns_1 li{width:100%}.navbar-nav li.multicolumn .submenu_columns_2{width:466px}.navbar-nav li.multicolumn .submenu_columns_3{width:750px}.navbar-nav li.multicolumn .submenu_columns_4{width:32px}.navbar-nav li.multicolumn .submenu_columns_5{width:1165px}.navbar-nav li.drop_to_center .submenu_columns_1{left:-80px}.navbar-nav li.drop_to_center .submenu_columns_2{left:-191px}.navbar-nav li.drop_to_center .submenu_columns_3{left:-310px}.navbar-nav li.drop_to_center .submenu_columns_4{left:-425px}.navbar-nav li.drop_to_center .submenu_columns_5{left:-545px}.navbar-nav li.widget_area>.submenu-widget{min-width:800px;width:auto}.navbar-nav li.dropdown_full_width .megacol{left:15px;right:15px;width:auto}.navbar-nav [class*=submenu_columns] aside{float:left;text-align:left}.navbar-nav>li>.sub-menu.submenu-widget>li,.navbar-nav>li>.sub-menu.multicolumn>li{float:left;padding:15px 0}.navbar-nav>li>.sub-menu.submenu-widget.submenu_columns_1>li,.navbar-nav>li>.sub-menu.multicolumn.submenu_columns_1>li{float:none}.navbar-nav>li>.sub-menu.submenu-widget>li{padding:0}.navbar-nav>li>.sub-menu.submenu-widget .thim-widget-course-categories li{padding-left:0;padding-right:0}.navbar-nav li.tc-menu-layout-builder .sub-menu{padding-top:23px;padding-bottom:15px;min-width:800px;width:auto}.navbar-nav li.tc-menu-layout-builder .sub-menu .widget-title{text-transform:uppercase;font-size:14px;font-weight:700;line-height:25px;text-align:left}.navbar-nav .sub-menu.submenu_columns_5>li{width:20%}.navbar-nav .sub-menu.submenu_columns_4>li{width:25%}.navbar-nav .sub-menu.submenu_columns_3>li{width:33.33%}.navbar-nav .sub-menu.submenu_columns_2>li{width:50%}.navbar-nav .sub-menu.megacol{padding-bottom:20px}.navbar-nav .sub-menu.megacol>li .sub-menu{display:block !important;opacity:1 !important;margin-top:10px;top:auto}.navbar-nav .sub-menu.megacol>li .sub-menu a,.navbar-nav .sub-menu.megacol>li .sub-menu span{border:0}.navbar-nav .sub-menu.megacol>li .sub-menu li{padding-left:0}.navbar-nav .sub-menu.megacol.submenu_columns_3 .sub-menu{min-width:0;padding-left:30px}.navbar-nav .sub-menu.megacol.submenu_columns_3 .sub-menu:before{right:0;bottom:5px;top:15px;content:"";width:1px;height:auto;background:var(--thim-border-color,#eee);position:absolute}.navbar-nav .sub-menu.megacol.submenu_columns_3 .sub-menu li>a,.navbar-nav .sub-menu.megacol.submenu_columns_3 .sub-menu li>span{padding:8px 0}.navbar-nav .sub-menu.megacol.submenu_columns_3 li:first-child>.sub-menu{padding-left:0}.navbar-nav .sub-menu.megacol.submenu_columns_3 li:last-child>.sub-menu:before{display:none}.navbar-nav li.multicolumn .megacol>li>a:hover,.navbar-nav li.multicolumn .megacol>li>span:hover{background:transparent}.navbar-nav li.multicolumn .megacol .sub-menu{background:transparent;display:block !important}.navbar-nav li.multicolumn .megacol .sub-menu a,.navbar-nav li.multicolumn .megacol .sub-menu span.disable_link,.navbar-nav li.multicolumn .megacol .sub-menu .tc-menu-inner{padding:5px 0;display:block}.navbar-nav>li:hover>.sub-menu[class*=tc-columns-]>ul{margin:0}.navbar-nav>li:hover>.sub-menu[class*=tc-columns-]>ul>li{float:left;width:auto;max-width:235px}.navbar-nav>li:hover>.sub-menu[class*=tc-columns-]>ul>li .sub-menu{display:block !important;opacity:1 !important;visibility:visible;margin-top:10px;top:auto;left:0;right:auto;padding:0;position:relative;min-width:auto}.navbar-nav>li:hover>.sub-menu[class*=tc-columns-]>ul>li .sub-menu a,.navbar-nav>li:hover>.sub-menu[class*=tc-columns-]>ul>li .sub-menu span{border:0}.navbar-nav>li:hover>.sub-menu[class*=tc-columns-]>ul>li .sub-menu li{padding-left:0}.navbar-nav>li:hover>.sub-menu[class*=tc-columns-]>ul>li .sub-menu:before{bottom:5px;top:15px;right:-30px;content:"";width:1px;height:1000px;background:var(--thim-border-color,#eee);position:absolute}.navbar-nav>li:hover>.sub-menu[class*=tc-columns-]>ul>li .sub-menu li>a,.navbar-nav>li:hover>.sub-menu[class*=tc-columns-]>ul>li .sub-menu li>span{padding:8px 0}.nav>li.widget_area>.sub-menu{padding-top:23px;padding-bottom:15px}.nav>li.widget_area>.sub-menu aside{padding:15px}.nav>li.multicolumn>.sub-menu .sub-menu,.nav>li.widget_area>.sub-menu .sub-menu{box-shadow:0 0 0}.thim-nav-wrapper:not(.header_full) .tc-menu-depth-0.tc-menu-layout-builder>.sub-menu,.thim-nav-wrapper:not(.header_full) .tc-menu-depth-0.tc-menu-layout-column>.sub-menu,.thim-nav-wrapper:not(.header_full) .tc-menu-depth-0.menu-item.widget_area:not(.dropdown_full_width)>.sub-menu,.thim-nav-wrapper:not(.header_full) .tc-menu-depth-0.menu-item.multicolumn:not(.dropdown_full_width)>.sub-menu{left:auto;right:50%;transform:translateX(50%)}.thim-nav-wrapper.header_full .tc-menu-depth-0.tc-menu-layout-column>.sub-menu{left:auto;right:50%;transform:translateX(50%)}.menu-item.tc-menu-layout-column>.tc-megamenu-wrapper{width:intrinsic;width:-moz-max-content;width:-webkit-max-content;padding:15px 0}.menu-item.tc-menu-layout-column>.tc-megamenu-wrapper>ul{overflow:hidden}.menu-item.tc-menu-layout-column>.tc-megamenu-wrapper>ul>li{margin:0 30px}.menu-item.tc-menu-layout-column>.tc-megamenu-wrapper>ul>li:last-child .sub-menu::before{content:none}.menu-item.tc-menu-layout-column .tc-megamenu-title{font-weight:500;text-transform:uppercase;color:var(--thim-font-title-color) !important}}@media (min-width:992px){.drop_to_right>.sub-menu{left:auto;right:12px}.drop_to_center.standard>.sub-menu{left:50%}.navbar-nav li.multicolumn .submenu_columns_2{width:466px}#toolbar .menu li[class*=layout-default] .sub-menu{overflow:visible}#toolbar .menu li[class*=layout-default] .sub-menu .sub-menu{left:100%;top:0}#toolbar .menu li .sub-menu[class*=tc-columns-]>ul>li a.tc-megamenu-title{font-weight:600}#toolbar .menu li .sub-menu[class*=tc-columns-]>ul>li .sub-menu{display:block !important;position:relative}#toolbar .menu li .sub-menu.tc-columns-2{width:466px}#toolbar .menu li .sub-menu.tc-columns-3{width:750px}#toolbar .menu li .sub-menu.tc-columns-4{width:932px}#toolbar .menu li .sub-menu.tc-columns-5{width:1165px}}@media (max-width:768px){.mobile-menu-container .sub-menu[class*=submenu_columns]{margin-left:10px}.mobile-menu-container .sub-menu[class*=submenu_columns]:before{display:none}.mobile-menu-container .sub-menu[class*=submenu_columns]>li{margin-top:0;margin-bottom:0;overflow:hidden}.mobile-menu-container .sub-menu[class*=submenu_columns]>li:before{display:none}.mobile-menu-container .sub-menu[class*=submenu_columns]>li .sub-menu:before{top:0}}
+/** CSS Extral Customizer */
+body.thim-child-crypto .wrapper-lists-our-team .thim-crypto-team-carousel .owl-controls .owl-buttons {
+		bottom: auto;
+    left: 15px !important;
+    margin-top: 20px;
+}
+.single-tp_event .tp-event-organizers{
+                display: none !important;
+}
+
+div.author{
+		display: none !important;
+}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/jquery/jquery.min.js?ver=3.7.0" id="jquery-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="bp-confirm-js-extra">
+/* <![CDATA[ */
+var BP_Confirm = {"are_you_sure":"\u00bfEst\u00e1s seguro?"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/buddypress/bp-core/js/confirm.min.js?ver=11.3.1" id="bp-confirm-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/buddypress/bp-core/js/widget-members.min.js?ver=11.3.1" id="bp-widget-members-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/buddypress/bp-core/js/jquery-query.min.js?ver=11.3.1" id="bp-jquery-query-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-cookie.min.js?ver=11.3.1" id="bp-jquery-cookie-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-scroll-to.min.js?ver=11.3.1" id="bp-jquery-scroll-to-js" defer></script>
+<script type="text/javascript" id="bp-legacy-js-js-extra">
+/* <![CDATA[ */
+var BP_DTheme = {"accepted":"Aceptado","close":"Cerrar","comments":"comentarios","leave_group_confirm":"\u00bfEst\u00e1s seguro que quieres salir del grupo?","mark_as_fav":"Favorito","my_favs":"Mis favoritos","rejected":"Rechazado","remove_fav":"Eliminar favorito","show_all":"Mostrar todo","show_all_comments":"Mostrar todos los comentarios para este hilo.","show_x_comments":"Mostrar todos los comentarios (%d)","unsaved_changes":"Tu perfil tiene cambios no guardados. Si abandonas esta p\u00e1gina, los cambios se perder\u00e1n. ","view":"Ver","store_filter_settings":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/buddypress/bp-templates/bp-legacy/js/buddypress.min.js?ver=11.3.1" id="bp-legacy-js-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/themes/eduma-child-crypto/js/child_script.js?ver=1693494441" id="thim_child_script-js" defer></script>
+<link rel="https://api.w.org/" href="https://www.ueprim.edu.ec/wp-json/" /><link rel="alternate" type="application/json" href="https://www.ueprim.edu.ec/wp-json/wp/v2/pages/2780" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.ueprim.edu.ec/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.3.1" />
+<meta name="generator" content="WooCommerce 8.1.1" />
+<link rel="shortlink" href="https://www.ueprim.edu.ec/?p=2780" />
+<link rel="alternate" type="application/json+oembed" href="https://www.ueprim.edu.ec/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ueprim.edu.ec%2Feducacion-inicial%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.ueprim.edu.ec/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ueprim.edu.ec%2Feducacion-inicial%2F&#038;format=xml" />
+<style type="text/css"> .ae_data .elementor-editor-element-setting {
+            display:none !important;
+            }
+            </style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">var ajaxurl = 'https://www.ueprim.edu.ec/wp-admin/admin-ajax.php';</script>
+<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+                function tc_insert_internal_css(css) {
+                    var tc_style = document.createElement("style");
+                    tc_style.type = "text/css";
+                    tc_style.setAttribute('data-type', 'tc-internal-css');
+                    var tc_style_content = document.createTextNode(css);
+                    tc_style.appendChild(tc_style_content);
+                    document.head.appendChild(tc_style);
+                }
+            </script>
+<meta name="generator" content="Elementor 3.16.4; features: e_dom_optimization, e_optimized_assets_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+<meta name="generator" content="Powered by Slider Revolution 6.6.14 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<link rel="icon" href="https://www.ueprim.edu.ec/wp-content/uploads/2021/04/favicon-1.png" sizes="32x32" />
+<link rel="icon" href="https://www.ueprim.edu.ec/wp-content/uploads/2021/04/favicon-1.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.ueprim.edu.ec/wp-content/uploads/2021/04/favicon-1.png" />
+<meta name="msapplication-TileImage" content="https://www.ueprim.edu.ec/wp-content/uploads/2021/04/favicon-1.png" />
+<script type="rocketlazyloadscript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+				try {
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+					if(e.layout==="fullscreen" || e.l==="fullscreen")
+						newh = Math.max(e.mh,window.RSIH);
+					else{
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,
+							sl;
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}
+			//});
+		  };</script>
+<style id="thim-customizer-inline-styles">/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(http://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiByp8kv8JHgFVrLDz8Z11lFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(http://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiByp8kv8JHgFVrLDz8Z1JlFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(http://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiByp8kv8JHgFVrLDz8Z1xlFd2JQEk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(http://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(http://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(http://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(http://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiByp8kv8JHgFVrLEj6Z11lFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(http://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(http://www.ueprim.edu.ec/wp-content/uploads/thim-fonts/poppins/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}</style> <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+			if (typeof ajaxurl === 'undefined') {
+				/* <![CDATA[ */
+				var ajaxurl = "https://www.ueprim.edu.ec/wp-admin/admin-ajax.php"
+				/* ]]> */
+			}
+		</script>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+<body class="bp-legacy page-template-default page page-id-2780 wp-custom-logo wp-embed-responsive theme-eduma pmpro-body-has-access woocommerce-no-js thim-child-crypto thim-body-load-overlay bg-boxed-image thim-popup-feature learnpress-v4 fixloader elementor-default elementor-kit-8934 elementor-page elementor-page-2780 no-js" id="thim-body">
+
+<div class="mobile-menu-wrapper">
+<div class="mobile-menu-inner">
+<div class="icon-wrapper">
+<div class="icon-menu-back" data-close>Back<span></span></div>
+<div class="menu-mobile-effect navbar-toggle close-icon" data-effect="mobile-effect">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</div>
+</div>
+<nav class="mobile-menu-container mobile-effect">
+<ul class="nav navbar-nav">
+<li id="menu-item-13095" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-13095 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="https://www.ueprim.edu.ec/" class="tc-menu-inner">Inicio</a>
+<ul class="sub-menu">
+<li id="menu-item-13336" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13336 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a target="_blank" href="https://seprim.ueprim.edu.ec/ecuanotas/inscripcion_online/" class="tc-menu-inner tc-megamenu-title">Admision en línea</a></li>
+<li id="menu-item-11651" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11651 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a target="_blank" href="https://seprim.ueprim.edu.ec/ecuanotas/index.php" class="tc-menu-inner tc-megamenu-title">Sistema Académico</a></li>
+<li id="menu-item-11653" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11653 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a target="_blank" href="https://outlook.office.com/mail/inbox" class="tc-menu-inner tc-megamenu-title">Correo Institucional</a></li>
+</ul>
+</li>
+<li id="menu-item-11645" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-11645 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="#" class="tc-menu-inner">Formación</a>
+<ul class="sub-menu">
+<li id="menu-item-11646" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-11646 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="https://www.ueprim.edu.ec/educacion-inicial/" class="tc-menu-inner tc-megamenu-title">Primera Infancia</a></li>
+<li id="menu-item-11648" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11648 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="https://www.ueprim.edu.ec/egb/" class="tc-menu-inner tc-megamenu-title">Primaria (2do a 6to)</a></li>
+<li id="menu-item-15738" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15738 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="https://www.ueprim.edu.ec/anos-intermedios/" class="tc-menu-inner tc-megamenu-title">Años Intermedios</a></li>
+<li id="menu-item-11649" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11649 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="https://www.ueprim.edu.ec/bachillerato/" class="tc-menu-inner tc-megamenu-title">Programa del Diploma del IB</a></li>
+</ul>
+</li>
+<li id="menu-item-14157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-14157 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="https://www.ueprim.edu.ec/admisiones/" class="tc-menu-inner">Admisiones</a>
+<ul class="sub-menu">
+<li id="menu-item-14697" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14697 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="https://www.ueprim.edu.ec/referidos/" class="tc-menu-inner tc-megamenu-title">Plan de Referidos</a></li>
+</ul>
+</li>
+<li id="menu-item-14323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14323 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="https://www.ueprim.edu.ec/quienes-somos/" class="tc-menu-inner">Quiénes Somos</a></li>
+<li id="menu-item-13777" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13777 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="https://www.ueprim.edu.ec/blog/" class="tc-menu-inner">Noticias</a>
+<ul class="sub-menu">
+<li id="menu-item-13880" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13880 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="http://209.145.56.134/events/" class="tc-menu-inner tc-megamenu-title">Eventos</a></li>
+</ul>
+</li>
+<li id="menu-item-13401" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13401 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="https://www.ueprim.edu.ec/contactenos/" class="tc-menu-inner">Contáctenos</a>
+<ul class="sub-menu">
+<li id="menu-item-14733" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14733 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="https://www.ueprim.edu.ec/trabaja-con-nosotros/" class="tc-menu-inner tc-megamenu-title">Trabaja con Nosotros</a></li>
+</ul>
+</li>
+</ul> </nav>
+</div>
+</div>
+<div id="wrapper-container" class="wrapper-container">
+<div class="content-pusher">
+<header id="masthead" class="site-header affix-top bg-custom-sticky sticky-header header_overlay header_v1 item_menu_active_top">
+<div id="toolbar" class="toolbar">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="toolbar-container">
+<aside id="text-1210020" class="widget widget_text"> <div class="textwidget"><div class="thim-have-any-question">
+<div class="mobile"><i class="fa fa-phone"></i>Necesita asistencia personalizada? Escríbanos ahora: <a class="value" href="tel:+593993866325">+593993866325</a></div>
+<div class="email"><i class="fa fa-envelope"></i><a href="/cdn-cgi/l/email-protection#1a73747c755a6f7f6a687377347f7e6f347f79"><span class="__cf_email__" data-cfemail="224b4c444d62574752504b4f0c4746570c4741">[email&#160;protected]</span></a></div>
+</div>
+</div>
+</aside> </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="thim-nav-wrapper container">
+<div class="row">
+<div class="navigation col-sm-12">
+<div class="tm-table">
+<div class="width-logo table-cell sm-logo">
+<a href="https://www.ueprim.edu.ec/" title="UEPRIM - Somos líderes en enseñanza plurilingûe en la Provincia de El Oro" rel="home" class="thim-logo"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="UEPRIM" width="auto" height="auto" data-sticky="https://www.ueprim.edu.ec/wp-content/uploads/2021/04/logo-ueprim-azul-nuevo.png" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2021/04/logo-ueprim-blanco-nuevo.png"><noscript><img src="https://www.ueprim.edu.ec/wp-content/uploads/2021/04/logo-ueprim-blanco-nuevo.png" alt="UEPRIM" width="auto" height="auto" data-sticky="https://www.ueprim.edu.ec/wp-content/uploads/2021/04/logo-ueprim-azul-nuevo.png"></noscript></a> </div>
+<nav class="width-navigation table-cell table-right">
+<ul class="nav navbar-nav menu-main-menu thim-ekits-menu__nav">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-13095 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="https://www.ueprim.edu.ec/" class="tc-menu-inner">Inicio</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13336 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a target="_blank" href="https://seprim.ueprim.edu.ec/ecuanotas/inscripcion_online/" class="tc-menu-inner tc-megamenu-title">Admision en línea</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11651 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a target="_blank" href="https://seprim.ueprim.edu.ec/ecuanotas/index.php" class="tc-menu-inner tc-megamenu-title">Sistema Académico</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11653 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a target="_blank" href="https://outlook.office.com/mail/inbox" class="tc-menu-inner tc-megamenu-title">Correo Institucional</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-11645 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="#" class="tc-menu-inner">Formación</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-11646 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="https://www.ueprim.edu.ec/educacion-inicial/" class="tc-menu-inner tc-megamenu-title">Primera Infancia</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11648 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="https://www.ueprim.edu.ec/egb/" class="tc-menu-inner tc-megamenu-title">Primaria (2do a 6to)</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15738 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="https://www.ueprim.edu.ec/anos-intermedios/" class="tc-menu-inner tc-megamenu-title">Años Intermedios</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11649 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="https://www.ueprim.edu.ec/bachillerato/" class="tc-menu-inner tc-megamenu-title">Programa del Diploma del IB</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-14157 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="https://www.ueprim.edu.ec/admisiones/" class="tc-menu-inner">Admisiones</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14697 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="https://www.ueprim.edu.ec/referidos/" class="tc-menu-inner tc-megamenu-title">Plan de Referidos</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14323 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="https://www.ueprim.edu.ec/quienes-somos/" class="tc-menu-inner">Quiénes Somos</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13777 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="https://www.ueprim.edu.ec/blog/" class="tc-menu-inner">Noticias</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13880 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="http://209.145.56.134/events/" class="tc-menu-inner tc-megamenu-title">Eventos</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13401 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default"><a href="https://www.ueprim.edu.ec/contactenos/" class="tc-menu-inner">Contáctenos</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14733 tc-menu-item tc-menu-depth-1 tc-menu-align-left"><a href="https://www.ueprim.edu.ec/trabaja-con-nosotros/" class="tc-menu-inner tc-megamenu-title">Trabaja con Nosotros</a></li>
+</ul>
+</li>
+<li class="menu-right"><ul><li id="search-6" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://www.ueprim.edu.ec/">
+<label>
+<span class="screen-reader-text">Buscar:</span>
+<input type="search" class="search-field" placeholder="Buscar &hellip;" value name="s" />
+</label>
+<input type="submit" class="search-submit" value="Buscar" />
+</form></li></ul></li></ul>
+</nav>
+<div class="menu-mobile-effect navbar-toggle" data-effect="mobile-effect">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</div>
+</div>
+
+</div>
+</div>
+</div> </header>
+<div id="main-content">
+<section class="content-area">
+<div class="top_heading_out">
+<div data-bg="https://www.ueprim.edu.ec/wp-content/uploads/2021/04/header1-2.jpg" class="top_site_main rocket-lazyload" style="color: #ffffff;"><span class="overlay-top-header" style="background-color:rgba(0,0,0,0.5);"></span> <div class="page-title-wrapper">
+<div class="banner-wrapper container">
+<h1 class="page-title">Primera Infancia</h1> </div>
+</div>
+</div> <div class="breadcrumbs-wrapper">
+<div class="container">
+<ul class="breadcrumbs" id="breadcrumbs"><li><a href="https://www.ueprim.edu.ec/">Home</a></li><li>Primera Infancia</li></ul> </div>
+</div>
+</div>
+<div class="container no-padding-top site-content"><div class="row"><main id="main" class="site-main col-sm-12 full-width">
+<article id="post-2780" class="post-2780 page type-page status-publish hentry pmpro-has-access">
+<div class="entry-content">
+<div data-elementor-type="wp-post" data-elementor-id="2780" class="elementor elementor-2780" data-elementor-post-type="page">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-ef5fe4b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ef5fe4b" data-element_type="section">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-dcdc7a9" data-id="dcdc7a9" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-7dcf409 thim-ekits-heading-text-center elementor-widget thim-ekits-heading elementor-widget-thim-heading" data-id="7dcf409" data-element_type="widget" data-widget_type="thim-heading.default">
+<div class="elementor-widget-container">
+<div class="sc_heading text-center"><h3 class="title">Primera Infancia</h3><div class="sub-heading"><p>Oferta Educativa</p>
+</div><span class="line"></span></div> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-c7807e6 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c7807e6" data-element_type="section">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0451d5b" data-id="0451d5b" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-2463128 elementor-widget elementor-widget-text-editor" data-id="2463128" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<p style="text-align: center;">En Primera Infancia acogemos a niños desde los 2 años hasta los 5. Nuestro objetivo es impulsar el desarrollo integral de nuestros niños para que logren ser felices a través de experiencias de aprendizaje significativas.</p> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-b01b394 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b01b394" data-element_type="section">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d723cc2" data-id="d723cc2" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-800fe82 elementor-widget elementor-widget-image" data-id="800fe82" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img decoding="async" width="1170" height="478" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201170%20478'%3E%3C/svg%3E" class="attachment-full size-full wp-image-15535" alt data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/ei12.jpg" /><noscript><img decoding="async" width="1170" height="478" src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/ei12.jpg" class="attachment-full size-full wp-image-15535" alt="" /></noscript> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-13605c6 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="13605c6" data-element_type="section">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7b719b3" data-id="7b719b3" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-76fda43 thim-ekits-heading-text-center elementor-widget thim-ekits-heading elementor-widget-thim-heading" data-id="76fda43" data-element_type="widget" data-widget_type="thim-heading.default">
+<div class="elementor-widget-container">
+<div class="sc_heading text-center"><h3 class="title">Malla Curricular</h3><span class="line"></span></div> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-ce6c5fc elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ce6c5fc" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-35f22b8" data-id="35f22b8" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-1ffa7c3 elementor-widget elementor-widget-image" data-id="1ffa7c3" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img decoding="async" width="640" height="632" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20632'%3E%3C/svg%3E" class="attachment-large size-large wp-image-13634" alt data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/pensum.png" /><noscript><img decoding="async" width="640" height="632" src="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/pensum.png" class="attachment-large size-large wp-image-13634" alt="" /></noscript> </div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-93574cd" data-id="93574cd" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-ca82c32 thim-widget-tab elementor-widget thim-widget-tab template-tab" data-id="ca82c32" data-element_type="widget" data-widget_type="thim-tab.default">
+<div class="elementor-widget-container">
+<ul class="nav nav-tabs" role="tablist"><li role="presentation" class="active tab-col-3"><a href="#thim-widget-tab-11695902130-1-12" role="tab" data-toggle="tab"><i class="fa fa-user-plus"></i><span>Inicial 1 (2 años)</span></a></li><li role="presentation" class="tab-col-3"><a href="#thim-widget-tab-21695902130-1-12" role="tab" data-toggle="tab"><i class="fa fa-list-ol"></i><span>Inicial 2 (3 y 4 años)</span></a></li><li role="presentation" class="tab-col-3"><a href="#thim-widget-tab-31695902130-1-12" role="tab" data-toggle="tab"><i class="fa fa-book"></i><span>Preparatoria (5 años)</span></a></li></ul><div class="tab-content"> <div role="tabpanel" class="tab-pane active" id="thim-widget-tab-11695902130-1-12">Identidad y autonomía<br>
+Liderazgo para la convivencia<br>
+Descubrimiento y comprensión del medio natural y cultural<br>
+Desarrollo del pensamiento y la creatividad<br>
+Desarrollo de la comunicación<br>
+Exploración del movimiento<br>
+Tecnología<br>
+Developing verbal and non-verbal language<br>
+French <br>
+Brains in action (math)<br>
+Developing motor skills
+</div> <div role="tabpanel" class="tab-pane" id="thim-widget-tab-21695902130-1-12">Identidad y autonomía<br>
+Liderazgo para la convivencia<br>
+Conocimiento de su entorno<br>
+Pensamiento matemático<br>
+Aprestamiento a la lecto-escritura<br>
+Comprensión y expresión del lenguaje<br>
+Desarrollo de la creatividad<br>
+Salud y movimiento<br>
+Tecnología<br>
+Developing oral expression<br>
+French<br>
+Brains in action (math)<br>
+Developing motor skills<br></div> <div role="tabpanel" class="tab-pane" id="thim-widget-tab-31695902130-1-12">Brains in action (Math)<br>
+Phonemic Awareness and developing reading comprehension <br>
+Body expression and gross motor skills <br>
+Technology<br>
+French<br>
+Perfil de salida - Tripartita<br>
+Conocimiento de su entorno<br>
+Pensamiento matemático<br>
+Desarrollo de la creatividad<br>
+Salud, expresión y movimiento<br>
+Aprestamiento a la lecto-escritura<br>
+</div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-5da53f5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5da53f5" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c6a837b" data-id="c6a837b" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-82dce3c thim-ekits-heading-text-center elementor-widget thim-ekits-heading elementor-widget-thim-heading" data-id="82dce3c" data-element_type="widget" data-widget_type="thim-heading.default">
+<div class="elementor-widget-container">
+<div class="sc_heading text-center"><h3 class="title">Metodología</h3><div class="sub-heading"><p>Juego - Trabajo</p>
+</div><span class="line"></span></div> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-798777d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="798777d" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-462abe7" data-id="462abe7" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-ac2bff2 elementor-widget elementor-widget-image" data-id="ac2bff2" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img decoding="async" width="640" height="152" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20152'%3E%3C/svg%3E" class="attachment-large size-large wp-image-13647" alt data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/juego.png" /><noscript><img decoding="async" width="640" height="152" src="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/juego.png" class="attachment-large size-large wp-image-13647" alt="" /></noscript> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-6928d192 thim-remove-margin-top elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6928d192" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4fdff3b" data-id="4fdff3b" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-29ceb535 elementor-widget elementor-widget-thim-single-images" data-id="29ceb535" data-element_type="widget" data-widget_type="thim-single-images.default">
+<div class="elementor-widget-container">
+<div class="single-image template-base"><img width="662" height="624" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20662%20624'%3E%3C/svg%3E" class="attachment-full size-full" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/circulos1.png" /><noscript><img width="662" height="624" src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/circulos1.png" class="attachment-full size-full" alt="" decoding="async" /></noscript></div> </div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-5c03a08e" data-id="5c03a08e" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-455d739c thim-responsive-hidden elementor-widget elementor-widget-spacer" data-id="455d739c" data-element_type="widget" data-widget_type="spacer.default">
+<div class="elementor-widget-container">
+<div class="elementor-spacer">
+<div class="elementor-spacer-inner"></div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-6c5f4d6 iconbox-text-left elementor-widget elementor-widget-thim-icon-box" data-id="6c5f4d6" data-element_type="widget" data-widget_type="thim-icon-box.default">
+<div class="elementor-widget-container">
+<div class="thim-widget-icon-box"><div class="wrapper-box-icon text-left "><div class="smicon-box iconbox-top"><div class="boxes-icon"><span class="inner-icon"><span class="icon"><i class></i></span></span></div><div class="content-inner"><div class="sc-heading"><h3 class="heading__primary">Nuestros espacios son una extensión del hogar</h3></div><div class="desc-icon-box"><div class="desc-content">El juego es fundamental en la vida del niño ya que fomenta el desarrollo de la psicomotricidad y de sus interrelaciones sociales. Al incorporar espacios de juego dentro del aula, nuestros pequeños adquieren mayor autonomía y agencia que, a la vez, estimulan su creatividad y trabajo en equipo.</div></div></div></div></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-4f89897 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4f89897" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4a9aa99" data-id="4a9aa99" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-c511c64 thim-ekits-heading-text-center elementor-widget thim-ekits-heading elementor-widget-thim-heading" data-id="c511c64" data-element_type="widget" data-widget_type="thim-heading.default">
+<div class="elementor-widget-container">
+<div class="sc_heading text-center"><h3 class="title">Jornada Escolar <span class="thim-color">y Modalidad</span></h3><span class="line"></span></div> </div>
+</div>
+<div class="elementor-element elementor-element-46156fb elementor-widget elementor-widget-thim-single-images" data-id="46156fb" data-element_type="widget" data-widget_type="thim-single-images.default">
+<div class="elementor-widget-container">
+<div class="single-image template-base"><img width="470" height="296" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20470%20296'%3E%3C/svg%3E" class="attachment-full size-full" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/ei23.jpg" /><noscript><img width="470" height="296" src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/ei23.jpg" class="attachment-full size-full" alt="" decoding="async" /></noscript></div> </div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4657188" data-id="4657188" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-36ff49b elementor-widget elementor-widget-spacer" data-id="36ff49b" data-element_type="widget" data-widget_type="spacer.default">
+<div class="elementor-widget-container">
+<div class="elementor-spacer">
+<div class="elementor-spacer-inner"></div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-c5631c3 elementor-widget elementor-widget-text-editor" data-id="c5631c3" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<p>Nuestra modalidad de educación es presencial, intercalando actividades dentro y fuera del aula, lo que le permite a los educandos estar en contacto con la naturaleza y explorarla.</p><ul><li><strong>Inicial 1 y 2:</strong> 08h00 a 12h40</li><li><strong>Preparatoria:</strong> 07h45 a 13h10</li></ul><p>Las clases se planifican considerando la indagación, exploración y descubrimiento de su entorno natural y cultural para realizar la transferencia de las habilidades del pensamiento de nuestros estudiantes.</p> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-7597b46 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7597b46" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e91a249" data-id="e91a249" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-a02029b elementor-widget elementor-widget-spacer" data-id="a02029b" data-element_type="widget" data-widget_type="spacer.default">
+<div class="elementor-widget-container">
+<div class="elementor-spacer">
+<div class="elementor-spacer-inner"></div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-eb7afda elementor-widget elementor-widget-thim-video" data-id="eb7afda" data-element_type="widget" data-widget_type="thim-video.default">
+<div class="elementor-widget-container">
+<div class="thim-video-box">
+<div class="video-container">
+<div class="video"><iframe loading="lazy" id="thim-video" width="100%" height="100%" src="about:blank" allowfullscreen style="border: 0;" data-rocket-lazyload="fitvidscompatible" data-lazy-src="https://www.youtube.com/embed/QdjyoRlPuq0"></iframe><noscript><iframe id="thim-video" width="100%" height="100%" src="https://www.youtube.com/embed/QdjyoRlPuq0" allowfullscreen style="border: 0;"></iframe></noscript></div> </div>
+</div> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-363364d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="363364d" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6f94f6e" data-id="6f94f6e" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-3cf2c0c elementor-widget elementor-widget-spacer" data-id="3cf2c0c" data-element_type="widget" data-widget_type="spacer.default">
+<div class="elementor-widget-container">
+<div class="elementor-spacer">
+<div class="elementor-spacer-inner"></div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-d7e5aa6 elementor-widget elementor-widget-image-gallery" data-id="d7e5aa6" data-element_type="widget" data-widget_type="image-gallery.default">
+<div class="elementor-widget-container">
+<div class="elementor-image-gallery">
+<div id="gallery-1" class="gallery galleryid-2780 gallery-columns-4 gallery-size-medium"><figure class="gallery-item">
+<div class="gallery-icon landscape">
+<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="d7e5aa6" data-elementor-lightbox-title="galeria educacion inicial_0000_Layer 2" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTM3NTYsInVybCI6Imh0dHBzOlwvXC93d3cudWVwcmltLmVkdS5lY1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMVwvMDZcL2dhbGVyaWEtZWR1Y2FjaW9uLWluaWNpYWxfMDAwMF9MYXllci0yLmpwZyIsInNsaWRlc2hvdyI6ImQ3ZTVhYTYifQ%3D%3D" href="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/galeria-educacion-inicial_0000_Layer-2.jpg"><img width="300" height="169" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20169'%3E%3C/svg%3E" class="attachment-medium size-medium" alt decoding="async" fetchpriority="high" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/galeria-educacion-inicial_0000_Layer-2.jpg" /><noscript><img width="300" height="169" src="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/galeria-educacion-inicial_0000_Layer-2.jpg" class="attachment-medium size-medium" alt="" decoding="async" fetchpriority="high" /></noscript></a>
+</div></figure><figure class="gallery-item">
+<div class="gallery-icon landscape">
+<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="d7e5aa6" data-elementor-lightbox-title="galeria educacion inicial_0001_Layer 1" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTM3NTcsInVybCI6Imh0dHBzOlwvXC93d3cudWVwcmltLmVkdS5lY1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMVwvMDZcL2dhbGVyaWEtZWR1Y2FjaW9uLWluaWNpYWxfMDAwMV9MYXllci0xLmpwZyIsInNsaWRlc2hvdyI6ImQ3ZTVhYTYifQ%3D%3D" href="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/galeria-educacion-inicial_0001_Layer-1.jpg"><img width="300" height="169" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20169'%3E%3C/svg%3E" class="attachment-medium size-medium" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/galeria-educacion-inicial_0001_Layer-1.jpg" /><noscript><img width="300" height="169" src="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/galeria-educacion-inicial_0001_Layer-1.jpg" class="attachment-medium size-medium" alt="" decoding="async" /></noscript></a>
+</div></figure><figure class="gallery-item">
+<div class="gallery-icon landscape">
+<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="d7e5aa6" data-elementor-lightbox-title="inicial_nuevas_0008_20220707_124351" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTUxMjgsInVybCI6Imh0dHBzOlwvXC93d3cudWVwcmltLmVkdS5lY1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMlwvMDlcL2luaWNpYWxfbnVldmFzXzAwMDhfMjAyMjA3MDdfMTI0MzUxLmpwZyIsInNsaWRlc2hvdyI6ImQ3ZTVhYTYifQ%3D%3D" href="https://www.ueprim.edu.ec/wp-content/uploads/2022/09/inicial_nuevas_0008_20220707_124351.jpg"><img width="300" height="169" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20169'%3E%3C/svg%3E" class="attachment-medium size-medium" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2022/09/inicial_nuevas_0008_20220707_124351.jpg" /><noscript><img width="300" height="169" src="https://www.ueprim.edu.ec/wp-content/uploads/2022/09/inicial_nuevas_0008_20220707_124351.jpg" class="attachment-medium size-medium" alt="" decoding="async" /></noscript></a>
+</div></figure><figure class="gallery-item">
+<div class="gallery-icon landscape">
+<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="d7e5aa6" data-elementor-lightbox-title="galeria educacion inicial_0006_Foto 13-8-19 08 29 14" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTM3NjIsInVybCI6Imh0dHBzOlwvXC93d3cudWVwcmltLmVkdS5lY1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMVwvMDZcL2dhbGVyaWEtZWR1Y2FjaW9uLWluaWNpYWxfMDAwNl9Gb3RvLTEzLTgtMTktMDgtMjktMTQuanBnIiwic2xpZGVzaG93IjoiZDdlNWFhNiJ9" href="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/galeria-educacion-inicial_0006_Foto-13-8-19-08-29-14.jpg"><img width="300" height="169" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20169'%3E%3C/svg%3E" class="attachment-medium size-medium" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/galeria-educacion-inicial_0006_Foto-13-8-19-08-29-14.jpg" /><noscript><img width="300" height="169" src="https://www.ueprim.edu.ec/wp-content/uploads/2021/06/galeria-educacion-inicial_0006_Foto-13-8-19-08-29-14.jpg" class="attachment-medium size-medium" alt="" decoding="async" /></noscript></a>
+</div></figure><figure class="gallery-item">
+<div class="gallery-icon landscape">
+<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="d7e5aa6" data-elementor-lightbox-title="galeria educacion inicial_0007_20230418_090338" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTU1NjQsInVybCI6Imh0dHBzOlwvXC93d3cudWVwcmltLmVkdS5lY1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyM1wvMDRcL2dhbGVyaWEtZWR1Y2FjaW9uLWluaWNpYWxfMDAwN18yMDIzMDQxOF8wOTAzMzguanBnIiwic2xpZGVzaG93IjoiZDdlNWFhNiJ9" href="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0007_20230418_090338.jpg"><img width="300" height="169" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20169'%3E%3C/svg%3E" class="attachment-medium size-medium" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0007_20230418_090338.jpg" /><noscript><img width="300" height="169" src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0007_20230418_090338.jpg" class="attachment-medium size-medium" alt="" decoding="async" /></noscript></a>
+</div></figure><figure class="gallery-item">
+<div class="gallery-icon landscape">
+<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="d7e5aa6" data-elementor-lightbox-title="galeria educacion inicial_0006_20230418_090446" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTU1NjUsInVybCI6Imh0dHBzOlwvXC93d3cudWVwcmltLmVkdS5lY1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyM1wvMDRcL2dhbGVyaWEtZWR1Y2FjaW9uLWluaWNpYWxfMDAwNl8yMDIzMDQxOF8wOTA0NDYuanBnIiwic2xpZGVzaG93IjoiZDdlNWFhNiJ9" href="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0006_20230418_090446.jpg"><img width="300" height="169" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20169'%3E%3C/svg%3E" class="attachment-medium size-medium" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0006_20230418_090446.jpg" /><noscript><img width="300" height="169" src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0006_20230418_090446.jpg" class="attachment-medium size-medium" alt="" decoding="async" /></noscript></a>
+</div></figure><figure class="gallery-item">
+<div class="gallery-icon landscape">
+<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="d7e5aa6" data-elementor-lightbox-title="galeria educacion inicial_0005_20230418_090530" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTU1NjYsInVybCI6Imh0dHBzOlwvXC93d3cudWVwcmltLmVkdS5lY1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyM1wvMDRcL2dhbGVyaWEtZWR1Y2FjaW9uLWluaWNpYWxfMDAwNV8yMDIzMDQxOF8wOTA1MzAuanBnIiwic2xpZGVzaG93IjoiZDdlNWFhNiJ9" href="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0005_20230418_090530.jpg"><img width="300" height="169" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20169'%3E%3C/svg%3E" class="attachment-medium size-medium" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0005_20230418_090530.jpg" /><noscript><img width="300" height="169" src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0005_20230418_090530.jpg" class="attachment-medium size-medium" alt="" decoding="async" /></noscript></a>
+</div></figure><figure class="gallery-item">
+<div class="gallery-icon landscape">
+<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="d7e5aa6" data-elementor-lightbox-title="galeria educacion inicial_0004_20230418_090910" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTU1NjcsInVybCI6Imh0dHBzOlwvXC93d3cudWVwcmltLmVkdS5lY1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyM1wvMDRcL2dhbGVyaWEtZWR1Y2FjaW9uLWluaWNpYWxfMDAwNF8yMDIzMDQxOF8wOTA5MTAuanBnIiwic2xpZGVzaG93IjoiZDdlNWFhNiJ9" href="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0004_20230418_090910.jpg"><img width="300" height="169" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20169'%3E%3C/svg%3E" class="attachment-medium size-medium" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0004_20230418_090910.jpg" /><noscript><img width="300" height="169" src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0004_20230418_090910.jpg" class="attachment-medium size-medium" alt="" decoding="async" /></noscript></a>
+</div></figure><figure class="gallery-item">
+<div class="gallery-icon landscape">
+<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="d7e5aa6" data-elementor-lightbox-title="galeria educacion inicial_0003_20230418_093325" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTU1NjgsInVybCI6Imh0dHBzOlwvXC93d3cudWVwcmltLmVkdS5lY1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyM1wvMDRcL2dhbGVyaWEtZWR1Y2FjaW9uLWluaWNpYWxfMDAwM18yMDIzMDQxOF8wOTMzMjUuanBnIiwic2xpZGVzaG93IjoiZDdlNWFhNiJ9" href="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0003_20230418_093325.jpg"><img width="300" height="169" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20169'%3E%3C/svg%3E" class="attachment-medium size-medium" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0003_20230418_093325.jpg" /><noscript><img width="300" height="169" src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0003_20230418_093325.jpg" class="attachment-medium size-medium" alt="" decoding="async" /></noscript></a>
+</div></figure><figure class="gallery-item">
+<div class="gallery-icon landscape">
+<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="d7e5aa6" data-elementor-lightbox-title="galeria educacion inicial_0002_20230418_093723" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTU1NjksInVybCI6Imh0dHBzOlwvXC93d3cudWVwcmltLmVkdS5lY1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyM1wvMDRcL2dhbGVyaWEtZWR1Y2FjaW9uLWluaWNpYWxfMDAwMl8yMDIzMDQxOF8wOTM3MjMuanBnIiwic2xpZGVzaG93IjoiZDdlNWFhNiJ9" href="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0002_20230418_093723.jpg"><img width="300" height="169" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20169'%3E%3C/svg%3E" class="attachment-medium size-medium" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0002_20230418_093723.jpg" /><noscript><img width="300" height="169" src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0002_20230418_093723.jpg" class="attachment-medium size-medium" alt="" decoding="async" /></noscript></a>
+</div></figure><figure class="gallery-item">
+<div class="gallery-icon landscape">
+<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="d7e5aa6" data-elementor-lightbox-title="galeria educacion inicial_0001_20230418_093225" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTU1NzAsInVybCI6Imh0dHBzOlwvXC93d3cudWVwcmltLmVkdS5lY1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyM1wvMDRcL2dhbGVyaWEtZWR1Y2FjaW9uLWluaWNpYWxfMDAwMV8yMDIzMDQxOF8wOTMyMjUuanBnIiwic2xpZGVzaG93IjoiZDdlNWFhNiJ9" href="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0001_20230418_093225.jpg"><img width="300" height="169" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20169'%3E%3C/svg%3E" class="attachment-medium size-medium" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0001_20230418_093225.jpg" /><noscript><img width="300" height="169" src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0001_20230418_093225.jpg" class="attachment-medium size-medium" alt="" decoding="async" /></noscript></a>
+</div></figure><figure class="gallery-item">
+<div class="gallery-icon landscape">
+<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="d7e5aa6" data-elementor-lightbox-title="galeria educacion inicial_0000_20230418_094104" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTU1NzEsInVybCI6Imh0dHBzOlwvXC93d3cudWVwcmltLmVkdS5lY1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyM1wvMDRcL2dhbGVyaWEtZWR1Y2FjaW9uLWluaWNpYWxfMDAwMF8yMDIzMDQxOF8wOTQxMDQuanBnIiwic2xpZGVzaG93IjoiZDdlNWFhNiJ9" href="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0000_20230418_094104.jpg"><img width="300" height="169" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20169'%3E%3C/svg%3E" class="attachment-medium size-medium" alt decoding="async" data-lazy-src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0000_20230418_094104.jpg" /><noscript><img width="300" height="169" src="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/galeria-educacion-inicial_0000_20230418_094104.jpg" class="attachment-medium size-medium" alt="" decoding="async" /></noscript></a>
+</div></figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</article>
+</main></div></div></section>
+<footer id="colophon" class=" site-footer">
+<div class="footer">
+<div class="container">
+<div class="row">
+<aside id="text-1210019" class="widget widget_text footer_widget"> <div class="textwidget"> <div data-elementor-type="wp-post" data-elementor-id="8920" class="elementor elementor-8920" data-elementor-post-type="ae_global_templates">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-6b552a6 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6b552a6" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-a51a96f thim-border-right" data-id="a51a96f" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-3edc9fd iconbox-text-center elementor-widget elementor-widget-thim-icon-box" data-id="3edc9fd" data-element_type="widget" data-widget_type="thim-icon-box.default">
+<div class="elementor-widget-container">
+<div class="thim-widget-icon-box"><div class="wrapper-box-icon text-center "><div class="smicon-box iconbox-top"><div class="boxes-icon"><span class="inner-icon"><span class="icon"><i class="fa fa-phone"></i></span></span></div><div class="content-inner"><div class="desc-icon-box"><div class="desc-content"><em>072981881</em>
++593 99 184 7304</div></div></div></div></div></div> </div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-d81e762 thim-border-right" data-id="d81e762" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-5fd705d iconbox-text-center elementor-widget elementor-widget-thim-icon-box" data-id="5fd705d" data-element_type="widget" data-widget_type="thim-icon-box.default">
+<div class="elementor-widget-container">
+<div class="thim-widget-icon-box"><div class="wrapper-box-icon text-center "><div class="smicon-box iconbox-top"><div class="boxes-icon"><span class="inner-icon"><span class="icon"><i class="fa fa-map-marker"></i></span></span></div><div class="content-inner"><div class="desc-icon-box"><div class="desc-content"><em>AV. LUIS ANGEL LEON ROMAN</em>
+MACHALA, EL ORO</div></div></div></div></div></div> </div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-244aa27 thim-border-right" data-id="244aa27" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-35b409c iconbox-text-center elementor-widget elementor-widget-thim-icon-box" data-id="35b409c" data-element_type="widget" data-widget_type="thim-icon-box.default">
+<div class="elementor-widget-container">
+<div class="thim-widget-icon-box"><div class="wrapper-box-icon text-center "><div class="smicon-box iconbox-top"><div class="boxes-icon"><span class="inner-icon"><span class="icon"><i class="fa fa-envelope-o"></i></span></span></div><div class="content-inner"><div class="desc-icon-box"><div class="desc-content"><em>INFO</em>
+@UEPRIM.EDU.EC</div></div></div></div></div></div> </div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-5aef8c8" data-id="5aef8c8" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-8acdd19 iconbox-text-center elementor-widget elementor-widget-thim-icon-box" data-id="8acdd19" data-element_type="widget" data-widget_type="thim-icon-box.default">
+<div class="elementor-widget-container">
+<div class="thim-widget-icon-box"><div class="wrapper-box-icon text-center "><div class="smicon-box iconbox-top"><div class="boxes-icon"><span class="inner-icon"><span class="icon"><i class="fa fa-clock-o"></i></span></span></div><div class="content-inner"><div class="desc-icon-box"><div class="desc-content"><em>LUNES A VIERNES: 07:30 AM – 3:00 PM</em>
+FERIADOS: CERRADO</div></div></div></div></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-3683d89 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3683d89" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-0eb3511" data-id="0eb3511" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-42178c5 elementor-widget elementor-widget-text-editor" data-id="42178c5" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<a href="#"><img class="alignnone size-full wp-image-11069" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20162%2017'%3E%3C/svg%3E" alt width="162" height="17" data-lazy-src="https://ueprim.edu.ec/wp-content/uploads/2021/04/logo-footer.png" /><noscript><img class="alignnone size-full wp-image-11069" src="https://ueprim.edu.ec/wp-content/uploads/2021/04/logo-footer.png" alt="" width="162" height="17" /></noscript></a> </div>
+</div>
+<div class="elementor-element elementor-element-e601f67 elementor-shape-circle e-grid-align-left elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="e601f67" data-element_type="widget" data-widget_type="social-icons.default">
+<div class="elementor-widget-container">
+<div class="elementor-social-icons-wrapper elementor-grid">
+<span class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-71bae7c" href="https://www.facebook.com/UEPRIM" target="_blank" rel="noopener">
+<span class="elementor-screen-only">Facebook</span>
+<i class="fab fa-facebook"></i> </a>
+</span>
+<span class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-c4ef2c3" href="https://www.instagram.com/ueprim_seduc/" target="_blank" rel="noopener">
+<span class="elementor-screen-only">Instagram</span>
+<i class="fab fa-instagram"></i> </a>
+</span>
+<span class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-b32b164" href="https://twitter.com/ueprim" target="_blank" rel="noopener">
+<span class="elementor-screen-only">Twitter</span>
+<i class="fab fa-twitter"></i> </a>
+</span>
+<span class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-e49a284" href="https://www.youtube.com/channel/UCB0qsFDBmJytKTc6f70JXLA" target="_blank" rel="noopener">
+<span class="elementor-screen-only">Youtube</span>
+<i class="fab fa-youtube"></i> </a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-82906a9" data-id="82906a9" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-a7f48c6 elementor-widget elementor-widget-heading" data-id="a7f48c6" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-default">POLÍTICAS</h4> </div>
+</div>
+<div class="elementor-element elementor-element-718b76a elementor-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="718b76a" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/wp-content/uploads/2023/08/Web-Politica-de-Acceso-e-Inclusion_agosto2023.pdf" target="_blank" rel="noopener">
+<span class="elementor-icon-list-text">ACCESO E INCLUSIÓN</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/wp-content/uploads/2023/08/Web-Politica-de-Evaluacion-Version-4-Borrador-final-1.pdf" target="_blank" rel="noopener">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-check"></i> </span>
+<span class="elementor-icon-list-text">EVALUACIÓN</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/wp-content/uploads/2023/08/Web-Politica-Integridad-Academica_agosto2023.pdf" target="_blank" rel="noopener">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-check"></i> </span>
+<span class="elementor-icon-list-text">INTEGRIDAD ACADÉMICA</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/wp-content/uploads/2023/08/Web-Politica-Linguistica-V6_agosto2023.pdf" target="_blank" rel="noopener">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-check"></i> </span>
+<span class="elementor-icon-list-text">LINGÜÏSTICA</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/wp-content/uploads/2023/08/Web-Politica_Admision_V5_oct-22.pdf" target="_blank" rel="noopener">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-check"></i> </span>
+<span class="elementor-icon-list-text">ADMISIÓN</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-6b2b524" data-id="6b2b524" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-93cf0af elementor-widget elementor-widget-heading" data-id="93cf0af" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-default">DOCUMENTOS</h4> </div>
+</div>
+<div class="elementor-element elementor-element-5bb7814 elementor-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="5bb7814" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/wp-content/uploads/2023/08/Cronograma_Escolar_2023-2024_V2.pdf" target="_blank" rel="noopener">
+<span class="elementor-icon-list-text">CRONOGRAMA ESCOLAR</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/wp-content/uploads/2023/08/Calendario_Ciclos_6_dias_V3.pdf" target="_blank" rel="noopener">
+<span class="elementor-icon-list-text">CICLO DE 6 DÍAS</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/Codigo-de-Convivencia-UEPRIM.pdf" target="_blank" rel="noopener">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-check"></i> </span>
+<span class="elementor-icon-list-text">CÖDIGO DE CONVIVENCIA</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/wp-content/uploads/2023/04/Resolucion-de-costos-2023-2024.pdf">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-check"></i> </span>
+<span class="elementor-icon-list-text">RESOLUCIÓN DE COSTOS</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-1a5ce44" data-id="1a5ce44" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-86b4881 elementor-widget elementor-widget-heading" data-id="86b4881" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-default">Enlaces</h4> </div>
+</div>
+<div class="elementor-element elementor-element-3862b74 elementor-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="3862b74" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/">
+<span class="elementor-icon-list-text">INICIO</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/admisiones/">
+<span class="elementor-icon-list-text">ADMISIONES</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/events/">
+<span class="elementor-icon-list-text">EVENTOS</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/blog/">
+<span class="elementor-icon-list-text">NOTICIAS</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.ueprim.edu.ec/contactenos/">
+<span class="elementor-icon-list-text">CONTACTENOS</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</aside> </div>
+</div>
+</div>
+<div class="copyright-area">
+<div class="container">
+<div class="copyright-content">
+<div class="row">
+<div class="col-sm-12"><p class="text-copyright"><a href="#">Administrado</a> por <a class="color_primary" href="#" target="_self">Pablo Cun.</a> Todos los derechos reservados.</p></div> </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript">
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+<script type="rocketlazyloadscript">(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/es_ES/sdk/xfbml.customerchat.js#xfbml=1&version=v6.0&autoLogAppEvents=1'
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-customerchat" attribution="wordpress" attribution_version="2.3" page_id="1427302350855568"></div>
+
+<div class="gallery-slider-content"></div> <script type="rocketlazyloadscript">
+			window.addEventListener('load', function () {
+				setTimeout(function () {
+					var $ = jQuery
+					var $carousel = $('.thim-owl-carousel-post').each(function () {
+						$(this).find('.image').css('min-height', 0)
+						$(window).trigger('resize')
+					})
+				}, 500)
+			})
+		</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"Home","@id":"https:\/\/www.ueprim.edu.ec\/"}},{"@type":"ListItem","position":2,"item":{"name":"Primera Infancia","@id":"https:\/\/www.ueprim.edu.ec\/educacion-inicial\/"}}]}</script><link data-minify="1" rel="stylesheet" id="font-pe-icon-7-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/themes/eduma/assets/css/font-pe-icon-7.css?ver=1695759590" type="text/css" media="all" />
+<link rel="stylesheet" id="elementor-post-8920-css" href="https://www.ueprim.edu.ec/wp-content/uploads/elementor/css/post-8920.css?ver=1695757528" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="rs-plugin-settings-css" href="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=1695757573" type="text/css" media="all" />
+<style id="rs-plugin-settings-inline-css" type="text/css">
+#rs-demo-id {}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/comment-reply.min.js?ver=6.3.1" id="comment-reply-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1693494441" id="swv-js" defer></script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.ueprim.edu.ec\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":0};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1693494441" id="contact-form-7-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/paid-memberships-pro/js/select2.min.js?ver=4.0.3" id="select2-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.6.14" defer async id="tp-tools-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.6.14" defer async id="revmin-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" id="jquery-ui-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/underscore.min.js?ver=1.13.4" id="underscore-js" defer></script>
+<script type="text/javascript" id="wp-util-js-extra">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/wp-util.min.js?ver=6.3.1" id="wp-util-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/backbone.min.js?ver=1.4.1" id="backbone-js" defer></script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after" data-rocket-type="text/javascript">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/checkout\/??(.*)|\/cart\/?|\/mi-cuenta\/??(.*)|\/wc-api\/v(.*)|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.ueprim.edu.ec","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after" data-rocket-type="text/javascript">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.google.com/recaptcha/api.js?render=6LeTR5EbAAAAAHXfyguPQvstpdnzrmBHgzDu3zP0&#038;ver=3.0" id="google-recaptcha-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2" id="wp-polyfill-inert-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11" id="regenerator-runtime-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script type="text/javascript" id="wpcf7-recaptcha-js-extra">
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6LeTR5EbAAAAAHXfyguPQvstpdnzrmBHgzDu3zP0","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/cache/min/1/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=1693494441" id="wpcf7-recaptcha-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/imagesloaded.min.js?ver=4.1.4" id="imagesloaded-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/themes/eduma/assets/js/main.min.js?ver=5.3.2.1" id="thim-main-js" defer></script>
+<script type="text/javascript" id="thim-custom-script-js-extra">
+/* <![CDATA[ */
+var thim_js_translate = {"login":"Username","password":"Password","close":"Close"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/themes/eduma/assets/js/custom-script-v2.min.js?ver=5.3.2.1" id="thim-custom-script-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/themes/eduma/assets/js/thim-scripts.min.js?ver=5.3.2.1" id="thim-scripts-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.16.2" id="elementor-pro-webpack-runtime-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.16.4" id="elementor-webpack-runtime-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.16.4" id="elementor-frontend-modules-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/dist/hooks.min.js?ver=c6aec9a8d4e5a5d543a1" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-includes/js/dist/i18n.min.js?ver=7701b0c3857f914212ef" id="wp-i18n-js"></script>
+<script type="rocketlazyloadscript" id="wp-i18n-js-after" data-rocket-type="text/javascript">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" id="elementor-pro-frontend-js-before" data-rocket-type="text/javascript">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/www.ueprim.edu.ec\/wp-admin\/admin-ajax.php","nonce":"d5a9ae6138","urls":{"assets":"https:\/\/www.ueprim.edu.ec\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/www.ueprim.edu.ec\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"woocommerce":{"menu_cart":{"cart_page_url":"https:\/\/www.ueprim.edu.ec\/cart\/","checkout_page_url":"https:\/\/www.ueprim.edu.ec\/checkout\/","fragments_nonce":"af8b84051b"}},"facebook_sdk":{"lang":"es_EC","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/www.ueprim.edu.ec\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.16.2" id="elementor-pro-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2" id="elementor-waypoints-js" defer></script>
+<script type="rocketlazyloadscript" id="elementor-frontend-js-before" data-rocket-type="text/javascript">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartir en Facebook","shareOnTwitter":"Compartir en Twitter","pinIt":"Pinear","download":"Descargar","downloadImage":"Descargar imagen","fullscreen":"Pantalla completa","zoom":"Zoom","share":"Compartir","playVideo":"Reproducir v\u00eddeo","previous":"Anterior","next":"Siguiente","close":"Cerrar","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Port\u00e1til","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Pantalla grande","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.16.4","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"additional_custom_breakpoints":true,"theme_builder_v2":true,"landing-pages":true,"page-transitions":true,"notes":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/www.ueprim.edu.ec\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","woocommerce_notices_elements":[]},"post":{"id":2780,"title":"Primera%20Infancia%20-%20UEPRIM","excerpt":"","featuredImage":false}};
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.16.4" id="elementor-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.16.2" id="pro-elements-handlers-js" defer></script>
+<script type="text/javascript" id="wpforms-elementor-js-extra">
+/* <![CDATA[ */
+var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ueprim.edu.ec/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min.js?ver=1.8.3.1" id="wpforms-elementor-js" defer></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.ueprim.edu.ec/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode-wpr",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script><script>(function(){var js = "window['__CF$cv$params']={r:'80dc6dda2f64228a',t:'MTY5NTkwODc1MC42MDQwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+</html>
