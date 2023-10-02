@@ -242,19 +242,22 @@ section {
   font-weight: 500;
   color: #1a387a;
 }
+
+.btn-font{
+  font-family: var(--font-secondary);
+}
+
 .btn-outline-light{
   border-color: #8abac9;
   border-style: none;
   border-radius: 30px;
-  padding: 0px;
-  margin-left: 20px;
 }
 .buttons{
   margin-top: 20px;
- background-color: #68909c;
- border-radius: 20px;
- 
+  background-color: #68909c;
+  border-radius: 20px;
 }
+
 .btn-outline-dark{
   border-color: #8abac9;
   border-style: none;
@@ -3213,4 +3216,9 @@ section {
 .footer .footer-legal .social-links a:hover {
   background: var(--color-primary);
   text-decoration: none;
+}
+
+.img-fluidCol{
+  max-width: 100%;
+  height: 720;
 }
