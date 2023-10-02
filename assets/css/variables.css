@@ -94,6 +94,11 @@
   --color-black: #000000;
   --color-black-rgb: 0, 0, 0;
   
+  --color-green-cash: #075f29;
+  --color-green-cash-rgba: 7, 95, 41, 255;
+
+  --color-money: #d9b43d;
+  --color-money-rgba: 217, 180, 61, 255;
 }
 
 /*--------------------------------------------------------------
@@ -186,6 +191,8 @@
 .color-white { color: var(--color-white) !important; }
 .color-gray { color: var(--color-gray) !important; }
 .color-black { color: var(--color-black) !important; }
+.color-green-cash { color: var(--color-green-cash) !important; }
+.color-money { color: var(--color-money) !important; }
 
 /* Background Colors */
 .bg-default { background-color: var(--color-default) !important; }
