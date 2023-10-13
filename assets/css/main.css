@@ -3225,18 +3225,17 @@ section {
 
 
 .containerCard{
-  display: flex;
   overflow-y: auto;
-  scrollbar-width: none;
-  padding: 1.5rem 0;
+  height: 200px;
   margin-top: 100px;
   margin-bottom: 100px;
 }
 
 .cardCon{
   position: relative;
-  flex: 0 0 225px;
+  display: inline-block;
   height: 200px;
+  width: 150px;
   overflow: hidden;
   margin-left: 1.5rem;
   border-radius: 18px;
@@ -3248,7 +3247,7 @@ section {
 .body1{
   position: absolute;
   top: 0;
-  padding: 28px;
+  padding: 5px;
   font-family: "San Francisco";
   font-weight: 600;
 }
